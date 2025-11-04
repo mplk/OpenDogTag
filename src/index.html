@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenDogTag</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="module" src="./js/index.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        OpenDogTag
+      </a>
+      <span class="navbar-text" id="navbar-text">
+        Open Source Emergency NFC Tag
+      </span>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container" style="max-width: 42rem;">
+    <h2 class="m-3 text-center">Hi I'm <span id="name"></span>!</h2>
+
+    <!-- Profile Card -->
+    <div class="card m-3">
+      <div class="card-header" id="profile-card-header">
+        Profile
+      </div>
+      <div class="card-body p-0 pb-2">
+        <table class="table table-borderless table-hover m-0">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 60%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="px-3" id="sex-label">Sex</td>
+              <td class="px-3"><span id="sex-span">Female</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="neutered-label">Neutered</td>
+              <td class="px-3"><span id="neutered-span">Yes</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="birthday-label">Birthday</td>
+              <td class="px-3"><span id="birthday-span">01.01.2020</span> (<span id="age-span">5</span> years)</td>
+            </tr>
+            <tr>
+              <td class="px-3" id="breed-label">Breed</td>
+              <td class="px-3"><span id="breed-span">Labrador</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="height-label">Height (in cm)</td>
+              <td class="px-3"><span id="height-span">60</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="weight-label">Weight (in kg)</td>
+              <td class="px-3"><span id="weight-span">25</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="character-label">Character</td>
+              <td class="px-3"><span id="character-span">Friendly</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="special-attributes-label">Special Attributes</td>
+              <td class="px-3"><span id="special-attributes-span">None</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Identification Card -->
+    <div class="card m-3">
+      <div class="card-header" id="identification-card-header">
+        Identification
+      </div>
+      <div class="card-body p-0 pb-2">
+        <table class="table table-borderless table-hover m-0">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 60%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="px-3" id="chipped-label">Chip ID</td>
+              <td class="px-3"><span id="chip-id-span">123456789</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="chip-location-label">Chip Location</td>
+              <td class="px-3"><span id="chip-location-span">Left Shoulder</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="tasso-id-label">Tasso ID</td>
+              <td class="px-3"><span id="tasso-id-span">123456789</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="insurance-id-label">Insurance ID</td>
+              <td class="px-3"><span id="insurance-id-span">123456789</span></td>
+            </tr>
+            <tr>
+              <td class="px-3" id="tax-id-label">Tax ID</td>
+              <td class="px-3"><span id="tax-id-span">123456789</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating Edit Button -->
+  <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center justify-content-center" id="edit-button" style="width: 56px; height: 56px;">
+    <i class="bi bi-pencil"></i>
+  </a>
+
+</body>
+
+</html>
+</body>
+
+</html>
