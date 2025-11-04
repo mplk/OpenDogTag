@@ -2,152 +2,167 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenDogTag</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script type="module" src="./js/edit.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenDogTag</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script type="module" src="./js/edit.js"></script>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        OpenDogTag
-      </a>
-      <span class="navbar-text" id="navbar-text">
-        Open Source Emergency NFC Tag
-      </span>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                OpenDogTag
+            </a>
+            <span class="navbar-text" id="navbar-text">
+                Open Source Emergency NFC Tag
+            </span>
+        </div>
+    </nav>
 
-  <!-- Main content -->
-  <div class="container" style="max-width: 42rem;">
-    <h2 class="m-3 text-center">Hi I'm <input class="form-control form-control-lg d-inline-block w-auto" type="text" placeholder="Name of your dog"> !</h2>
+    <!-- Main content -->
+    <div class="container" style="max-width: 42rem;">
+        <h2 class="m-3 text-center">Hi I'm <input class="form-control form-control-lg d-inline-block w-auto" id="name" type="text"
+                placeholder="Name of your dog"> !</h2>
 
-    <!-- Profile Card -->
-    <div class="card m-3">
-      <div class="card-header" id="profile-card-header">
-        Profile
-      </div>
-      <div class="card-body p-0 pb-2">
-        <table class="table table-borderless table-hover m-0">
-          <colgroup>
-            <col style="width: 40%;">
-            <col style="width: 60%;">
-          </colgroup>
-          <tbody>
-            <tr>
-              <td class="px-3" id="sex-label">Sex</td>
-              <td class="px-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-                  <label class="form-check-label" for="radioDefault1">Female</label>
+        <!-- Profile Card -->
+        <div class="card m-3">
+            <div class="card-header" id="profile-card-header">
+                Profile
+            </div>
+            <div class="card-body p-0 pb-2">
+                <table class="table table-borderless table-hover m-0">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="px-3" id="sex-label">Sex</td>
+                            <td class="px-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioDefault" id="sex-female-radio">
+                                    <label class="form-check-label" for="sex-female-radio">Female</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioDefault" id="sex-male-radio"
+                                        checked>
+                                    <label class="form-check-label" for="sex-male-radio">Male</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="neutered-label">Neutered</td>
+                            <td class="px-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="neutered">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="birthday-label">Birthday</td>
+                            <td class="px-3">
+                                <input type="date" class="form-control" id="birthday" value="2020-01-01">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="breed-label">Breed</td>
+                            <td class="px-3">
+                                <input type="text" class="form-control" id="breed"
+                                    placeholder="Breed of your dog">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="height-label">Height (in cm)</td>
+                            <td class="px-3">
+                                <input type="number" class="form-control" id="height"
+                                    placeholder="Height of your dog">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="weight-label">Weight (in kg)</td>
+                            <td class="px-3">
+                                <input type="number" class="form-control" id="weight"
+                                    placeholder="Weight of your dog">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="character-label">Character</td>
+                            <td class="px-3">
+                                <input type="text" class="form-control" id="character"
+                                    placeholder="Character of your dog">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="special-attributes-label">Special Attributes</td>
+                            <td class="px-3">
+                                <input type="text" class="form-control" id="specialAttributes"
+                                    placeholder="Special Attributes of your dog">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Identification Card -->
+        <div class="card m-3">
+            <div class="card-header" id="identification-card-header">
+                Identification
+            </div>
+            <div class="card-body p-0 pb-2">
+                <table class="table table-borderless table-hover m-0">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="px-3 align-middle" id="chipped-label">Chip ID</td>
+                            <td class="px-3"><input type="text" class="form-control" id="chipId"
+                                    placeholder="Chip ID"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="chip-location-label">Chip Location</td>
+                            <td class="px-3"><input type="text" class="form-control" id="chipLocation"
+                                    placeholder="Chip Location"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="tasso-id-label">Tasso ID</td>
+                            <td class="px-3"><input type="text" class="form-control" id="tassoId"
+                                    placeholder="Tasso ID"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="insurance-id-label">Insurance ID</td>
+                            <td class="px-3"><input type="text" class="form-control" id="insuranceId"
+                                    placeholder="Insurance ID"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3 align-middle" id="tax-id-label">Tax ID</td>
+                            <td class="px-3"><input type="text" class="form-control" id="taxId"
+                                    placeholder="Tax ID"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Configuration Output -->
+        <div class="card m-3">
+            <div class="card-header" id="identification-card-header">
+                Configuration Output
+            </div>
+            <div class="card-body">
+                <textarea class="form-control" id="config-output" rows="10" readonly></textarea>
+                <div class="mt-3 d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Configuration size:</small>
+                    <span class="badge bg-info text-bg-info" id="byte-counter">0 bytes</span>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
-                  <label class="form-check-label" for="radioDefault2">Male</label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-                <td class="px-3 align-middle" id="neutered-label">Neutered</td>
-              <td class="px-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-              </td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="birthday-label">Birthday</td>
-              <td class="px-3">
-                <input type="date" class="form-control" id="birthday-input" value="2020-01-01">
-              </td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="breed-label">Breed</td>
-              <td class="px-3">
-                <input type="text" class="form-control" id="breed-input" placeholder="Breed of your dog">
-              </td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="height-label">Height (in cm)</td>
-              <td class="px-3">
-                <input type="number" class="form-control" id="height-input" placeholder="Height of your dog">
-              </td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="weight-label">Weight (in kg)</td>
-              <td class="px-3">
-                <input type="number" class="form-control" id="weight-input" placeholder="Weight of your dog">
-              </td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="character-label">Character</td>
-              <td class="px-3">
-                <input type="text" class="form-control" id="character-input" placeholder="Character of your dog">
-              </td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="special-attributes-label">Special Attributes</td>
-              <td class="px-3">
-                <input type="text" class="form-control" id="special-attributes-input" placeholder="Special Attributes of your dog">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+            </div>
+        </div>
 
-    <!-- Identification Card -->
-    <div class="card m-3">
-      <div class="card-header" id="identification-card-header">
-        Identification
-      </div>
-      <div class="card-body p-0 pb-2">
-        <table class="table table-borderless table-hover m-0">
-          <colgroup>
-            <col style="width: 40%;">
-            <col style="width: 60%;">
-          </colgroup>
-          <tbody>
-            <tr>
-              <td class="px-3 align-middle" id="chipped-label">Chip ID</td>
-              <td class="px-3"><input type="text" class="form-control" id="chip-id-input" placeholder="Chip ID"></td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="chip-location-label">Chip Location</td>
-              <td class="px-3"><input type="text" class="form-control" id="chip-location-input" placeholder="Chip Location"></td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="tasso-id-label">Tasso ID</td>
-              <td class="px-3"><input type="text" class="form-control" id="tasso-id-input" placeholder="Tasso ID"></td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="insurance-id-label">Insurance ID</td>
-              <td class="px-3"><input type="text" class="form-control" id="insurance-id-input" placeholder="Insurance ID"></td>
-            </tr>
-            <tr>
-              <td class="px-3 align-middle" id="tax-id-label">Tax ID</td>
-              <td class="px-3"><input type="text" class="form-control" id="tax-id-input" placeholder="Tax ID"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
-
-    <!-- Configuration Output -->
-    <div class="card m-3">
-      <div class="card-header" id="identification-card-header">
-        Configuration Output
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn btn-primary mb-2">Save Changes</button>
-        <textarea class="form-control" id="config-output" rows="10" readonly></textarea>
-      </div>
-    </div>
-
-  </div>
 </body>
 
 </html>

@@ -1,27 +1,26 @@
-// Import our custom CSS
 import '../scss/styles.scss';
 
 import LZString from 'lz-string';
 
+const delimiter = '~';
+export const fields = ['name', 'sex', 'neutered', 'birthday', 'breed', 'height', 'weight', 'character', 'specialAttributes', 'chipId', 'chipLocation', 'tassoId', 'insuranceId', 'taxId'];
+
 export function decodeUrlParams(urlParams) {
-    const d = urlParams.get('d');
-    const decoded = LZString.decompressFromEncodedURIComponent(d);
-    const data = decoded ? decoded.split('*') : [];
+    const dataParameter = urlParams.get('d');
+    const decodedParameters = LZString.decompressFromEncodedURIComponent(dataParameter);
+    const dataArr = decodedParameters ? decodedParameters.split(delimiter) : [];
 
-    const name = data[0] || null;
-    const breed = data[1] || null;
-    const birthday = data[2] || null;
+    const data = {};
+    fields.forEach((field, index) => {
+        data[field] = dataArr[index] || null;
+    });
 
-    return { name, breed, birthday };
+    return data;
 }
 
 export function encodeUrlParams(params) {
-    const data = [
-        params.name || '',
-        params.breed || '',
-        params.birthday || ''
-    ];
-    const d = data.join('*');
+    const dataArr = fields.map(field => params[field] || '');
+    const d = dataArr.join(delimiter);
 
     const urlParams = new URLSearchParams();
     const encoded = LZString.compressToEncodedURIComponent(d);
@@ -33,7 +32,7 @@ export function encodeUrlParams(params) {
 export function calculateAge(birthday) {
     // Parse dd.mm.yyyy format
     const parts = birthday.split('.');
-    if (parts.length !== 3) return 'Unknown';
+    if (parts.length !== 3) return null;
 
     const birthDate = new Date(parts[2], parts[1] - 1, parts[0]);
     const today = new Date();
