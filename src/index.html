@@ -14,10 +14,10 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/favicon.svg" alt="Logo" width="60" height="48" class="d-inline-block align-middle">
+                <img src="/favicon.svg" class="d-inline-block align-middle" id="brand-logo">
                 <div class="d-inline-block align-middle">
-                    <div style="font-size: 1.5rem; line-height: 1.2;">OpenDogTag</div>
-                    <div class="navbar-text d-none d-md-block" style="font-size: 0.75rem; margin-top: -0.25rem;">
+                    <div id="brand-name">OpenDogTag</div>
+                    <div class="navbar-text d-none d-md-block" id="brand-text">
                         Open Source Emergency NFC Tag for Dogs
                     </div>
                 </div>
@@ -39,12 +39,12 @@
     </nav>
 
     <!-- Warning Message -->
-    <div class="alert alert-warning m-3" id="unsaved-changes-warning" style="display: none;">
+    <div class="alert alert-warning m-3" id="unsaved-changes-warning">
         You have unsaved changes. Please save your changes before leaving this page.
     </div>
 
     <!-- Main content -->
-    <div class="container" style="max-width: 42rem;">
+    <div class="container" id="main-content-container">
         <h2 class="m-3 text-center">
             <div class="view-mode d-inline">Hi I'm <span id="name-output"></span>!</div>
             <div class="edit-mode d-inline">Hi I'm <input class="form-control form-control-lg d-inline-block w-auto"
@@ -59,8 +59,8 @@
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
                     <colgroup>
-                        <col style="width: 40%;">
-                        <col style="width: 60%;">
+                        <col class="label-column">
+                        <col class="value-column">
                     </colgroup>
                     <tbody>
                         <tr>
@@ -186,8 +186,8 @@
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
                     <colgroup>
-                        <col style="width: 40%;">
-                        <col style="width: 60%;">
+                        <col class="label-column">
+                        <col class="value-column">
                     </colgroup>
                     <tbody>
                         <tr>
@@ -265,8 +265,8 @@
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
                     <colgroup>
-                        <col style="width: 40%;">
-                        <col style="width: 60%;">
+                        <col class="label-column">
+                        <col class="value-column">
                     </colgroup>
                     <tbody>
                         <tr>
@@ -344,8 +344,8 @@
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
                     <colgroup>
-                        <col style="width: 40%;">
-                        <col style="width: 60%;">
+                        <col class="label-column">
+                        <col class="value-column">
                     </colgroup>
                     <tbody>
                         <tr>
@@ -418,8 +418,8 @@
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
                     <colgroup>
-                        <col style="width: 40%;">
-                        <col style="width: 60%;">
+                        <col class="label-column">
+                        <col class="value-column">
                     </colgroup>
                     <tbody>
                         <tr>
@@ -470,8 +470,8 @@
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
                     <colgroup>
-                        <col style="width: 40%;">
-                        <col style="width: 60%;">
+                        <col class="label-column">
+                        <col class="value-column">
                     </colgroup>
                     <tbody>
                         <tr>
@@ -548,8 +548,7 @@
                 Configuration Output
             </div>
             <div class="card-body">
-                <textarea class="form-control" id="config-output" rows="6" readonly
-                    style="word-break: break-all;"></textarea>
+                <textarea class="form-control" id="config-output" rows="6" readonly></textarea>
                 <div class="mt-3 d-flex justify-content-between align-items-center">
                     <small class="text-muted">Configuration size:</small>
                     <span class="badge bg-info text-bg-info" id="byte-counter">0 bytes</span>
