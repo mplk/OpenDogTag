@@ -9,6 +9,8 @@ const newLinePlaceholder = '°';
 const baseUrl = `${window.location.origin}${window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'))}`;
 
 let currentMode = 'view';
+let currentTheme = 'light';
+
 let tagData = {
     name: null,
     sex: null,
@@ -317,6 +319,19 @@ function updateConfiguration() {
     $('#byte-counter').text(`${byteCount} bytes`);
 }
 
+function setTheme(theme) {
+    const htmlElement = document.documentElement;
+    htmlElement.setAttribute('data-bs-theme', theme);
+
+    // Update theme icon
+    const themeIcon = $('#theme-icon');
+    if (theme === 'dark') {
+        themeIcon.removeClass('fa-moon').addClass('fa-sun');
+    } else {
+        themeIcon.removeClass('fa-sun').addClass('fa-moon');
+    }
+}
+
 $(function () {
     // Get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
@@ -336,6 +351,16 @@ $(function () {
     $('#edit-navbar-button').on('click', function () {
         currentMode = currentMode === 'edit' ? 'view' : 'edit';
         switchMode(currentMode);
+    });
+
+    // Get preferred color scheme
+    currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    setTheme(currentTheme);
+    
+    // Toggle theme on button click
+    $('#theme-toggle-button').on('click', function () {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(currentTheme);
     });
 
     // Initial configuration link update
