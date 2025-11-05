@@ -85,7 +85,6 @@ function calculateAge(birthday) {
     return `${years} years ${months} months`;
 }
 
-
 function switchMode(mode) {
     switch (mode) {
         case 'edit':
