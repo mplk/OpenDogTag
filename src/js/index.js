@@ -4,6 +4,9 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 import '../scss/styles.scss';
 
+import { validateInput } from './validation.js';
+import { calculateAge } from './helpers.js';
+
 const delimiter = '~';
 const newLinePlaceholder = '°';
 const baseUrl = `${window.location.origin}${window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'))}`;
@@ -46,7 +49,7 @@ let tagData = {
     notes: null
 };
 
-function decodeUrlParams(dataParameter) {
+function decodeTagData(dataParameter) {
     const decodedParameters = LZString.decompressFromEncodedURIComponent(dataParameter);
     const dataArr = decodedParameters ? decodedParameters.split(delimiter) : [];
 
@@ -57,7 +60,7 @@ function decodeUrlParams(dataParameter) {
     return tagData;
 }
 
-function encodeUrlParams(params) {
+function encodeTagData(params) {
     const dataArr = Object.keys(tagData).map(field => params[field] || '');
     const d = dataArr.join(delimiter);
 
@@ -68,96 +71,6 @@ function encodeUrlParams(params) {
     return urlParams.toString();
 }
 
-function calculateAge(birthday) {
-    // Parse dd.mm.yyyy format
-    const parts = birthday.split('.');
-    if (parts.length !== 3) return null;
-
-    const birthDate = new Date(parts[2], parts[1] - 1, parts[0]);
-    const today = new Date();
-
-    let years = today.getFullYear() - birthDate.getFullYear();
-    let months = today.getMonth() - birthDate.getMonth();
-
-    if (months < 0) {
-        years--;
-        months += 12;
-    }
-
-    return `${years} years ${months} months`;
-}
-
-function validateEmail(email) {
-    if (!email) return true; // Allow empty values
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function validatePhone(phone) {
-    if (!phone) return true; // Allow empty values
-    // Allow digits, spaces, +, -, (, )
-    const phoneRegex = /^[\d\s\+\-\(\)]+$/;
-    // Must have at least 6 digits
-    const digitCount = (phone.match(/\d/g) || []).length;
-    return phoneRegex.test(phone) && digitCount >= 6;
-}
-
-function validateNumber(value, min, max) {
-    if (!value || value === '') return true; // Allow empty values
-    const num = parseFloat(value);
-    // Check if it's a valid number and within range
-    if (isNaN(num)) return false;
-    return num >= min && num <= max;
-}
-
-function validateInput(input) {
-    const $input = $(input);
-    const id = $input.attr('id');
-    const value = $input.val();
-    let isValid = true;
-
-    // For number inputs, check HTML5 validity
-    if (id === 'height-input' || id === 'weight-input') {
-        // Check if the browser considers it valid (handles text input automatically)
-        if (input.validity && !input.validity.valid) {
-            isValid = false;
-        } else if (value) {
-            // Additionally validate the range
-            const num = parseFloat(value);
-            if (id === 'height-input') {
-                isValid = !isNaN(num) && num >= 0 && num <= 200;
-            } else if (id === 'weight-input') {
-                isValid = !isNaN(num) && num >= 0 && num <= 150;
-            }
-        } else {
-            // Empty is valid (optional field)
-            $input.removeClass('is-invalid is-valid');
-            return true;
-        }
-    } else {
-        // Skip validation for empty optional fields
-        if (!value || value === '') {
-            $input.removeClass('is-invalid is-valid');
-            return true;
-        }
-
-        // Validate based on input type
-        if (id.includes('Email')) {
-            isValid = validateEmail(value);
-        } else if (id.includes('Phone')) {
-            isValid = validatePhone(value);
-        }
-    }
-
-    // Update visual feedback
-    if (isValid) {
-        $input.removeClass('is-invalid').addClass('is-valid');
-    } else {
-        $input.removeClass('is-valid').addClass('is-invalid');
-    }
-
-    return isValid;
-}
 
 function switchMode(mode) {
     switch (mode) {
@@ -310,7 +223,7 @@ function updateConfiguration() {
     });
 
     // Encode parameters and update output
-    const encodedParams = encodeUrlParams(params);
+    const encodedParams = encodeTagData(params);
     const configUrl = `${baseUrl}?${encodedParams}`;
     $('#config-output').val(configUrl);
 
@@ -335,7 +248,7 @@ function setTheme(theme) {
 $(function () {
     // Get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    tagData = decodeUrlParams(urlParams.get('d'));
+    tagData = decodeTagData(urlParams.get('d'));
     console.log('Dog tag data loaded: ', tagData);
 
     // Populate the fields with decoded parameters
