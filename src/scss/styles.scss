@@ -1,3 +1,22 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$primary: #008DA6;  // your brand colour
+$secondary: #153243; // your secondary colour
+$info: #BFD1FF;      // your info colour
+
+// Also update the theme‐colours map so things like btn‑primary, alert‑primary etc inherit.
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "info": $info,
+    "light": $light,
+    "dark": $dark
+  )
+);
+
 @import "bootstrap/scss/bootstrap";
 
 // Import custom themes

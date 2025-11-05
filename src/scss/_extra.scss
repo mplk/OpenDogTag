@@ -23,18 +23,22 @@ html, body {
 }
 
 #brand-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
     line-height: 1.2;
+    color: var(--bs-brand-text);
 }
 
 #brand-text {
-    font-size: 0.75rem;
-    margin-top: -0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0;;
+    color: var(--bs-brand-text);
 }
 
 #brand-logo {
     width: 60px;
-    height: 48px;
+    height: 44px;
 }
 
 nav {
@@ -43,4 +47,8 @@ nav {
 
 footer {
     background-color: var(--bs-footer-bg);
+}
+
+.icon-button {
+    color: var(--bs-brand-text);
 }

@@ -23,14 +23,14 @@
                 </div>
             </a>
             <div class="d-flex gap-2">
-                <select class="form-select form-select-sm" id="language-selector" style="width: auto;">
-                    <option value="en">English</option>
-                    <option value="de">Deutsch</option>
+                <select class="form-select form-select-sm" id="language-selector">
+                    <option value="en">EN</option>
+                    <option value="de">DE</option>
                 </select>
-                <button class="btn btn-outline-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme" title="Toggle theme">
+                <button class="btn btn-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme" title="Toggle theme">
                     <i class="fa-solid fa-moon" id="theme-icon"></i>
                 </button>
-                <button class="btn btn-outline-secondary" id="edit-navbar-button">
+                <button class="btn btn-secondary" id="edit-navbar-button">
                     <div class="view-mode">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </div>
@@ -50,14 +50,14 @@
     <!-- Main content -->
     <main class="flex-fill">
         <div class="container" id="main-content-container">
-            <h2 class="m-3 text-center">
+            <h2 class="m-5 text-center">
                 <div class="view-mode d-inline"><span id="greeting-view"></span></div>
                 <div class="edit-mode d-inline"><span data-i18n="greeting.edit">Hi I'm</span> <input class="form-control form-control-lg d-inline-block w-auto"
                         id="name-input" type="text" data-i18n-placeholder="placeholders.name" placeholder="Name of your dog"> !</div>
             </h2>
 
             <!-- Profile Card -->
-            <div class="card m-3">
+            <div class="card my-4">
                 <div class="card-header" id="profile-card-header" data-i18n="sections.basicInfo">
                     <i class="fa-solid fa-paw me-2"></i> Basic Information
                 </div>
@@ -69,7 +69,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3" id="sex-label" data-i18n="fields.sex">Sex</td>
+                                <td class="px-3" data-i18n="fields.sex">Sex</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="sex-output">(empty)</span>
@@ -89,7 +89,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="neutered-label" data-i18n="fields.neutered">Neutered</td>
+                                <td class="px-3" data-i18n="fields.neutered">Neutered</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="neutered-output">(empty)</span>
@@ -101,18 +101,18 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="birthday-label" data-i18n="fields.birthday">Birthday</td>
+                                <td class="px-3 align-middle" data-i18n="fields.birthday">Birthday</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="birthday-output">(empty)</span> (<span id="age-output">(empty)</span>)
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="date" class="form-control" id="birthday-input" value="2020-01-01">
+                                        <input type="date" class="form-control" id="birthday-input">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="breed-label" data-i18n="fields.breed">Breed</td>
+                                <td class="px-3 align-middle" data-i18n="fields.breed">Breed</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="breed-output">(empty)</span>
@@ -124,7 +124,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="height-label" data-i18n="fields.height">Height</td>
+                                <td class="px-3 align-middle" data-i18n="fields.height">Height</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="height-output">(empty)</span> cm
@@ -140,7 +140,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="weight-label" data-i18n="fields.weight">Weight</td>
+                                <td class="px-3 align-middle" data-i18n="fields.weight">Weight</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="weight-output">(empty)</span> kg
@@ -156,7 +156,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="character-label" data-i18n="fields.character">Character</td>
+                                <td class="px-3 align-middle" data-i18n="fields.character">Character</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="character-output">(empty)</span>
@@ -168,7 +168,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="special-attributes-label" data-i18n="fields.specialAttributes">Special Attributes</td>
+                                <td class="px-3 align-middle" data-i18n="fields.specialAttributes">Special Attributes</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="specialAttributes-output">(empty)</span>
@@ -185,7 +185,7 @@
             </div>
 
             <!-- Owner Card -->
-            <div class="card m-3">
+            <div class="card  my-4">
                 <div class="card-header" id="owner-card-header" data-i18n="sections.ownerInfo">
                     <i class="fa-solid fa-user me-2"></i> Owner Information
                 </div>
@@ -197,7 +197,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerName-label" data-i18n="fields.ownerName">Name</td>
+                                <td class="px-3 align-middle" data-i18n="fields.ownerName">Name</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerName-output">(empty)</span>
@@ -209,7 +209,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerPhone1-label" data-i18n="fields.ownerPhone1">Phone 1</td>
+                                <td class="px-3 align-middle" data-i18n="fields.ownerPhone1">Phone 1</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerPhone1-output">(empty)</span>
@@ -222,7 +222,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerPhone2-label" data-i18n="fields.ownerPhone2">Phone 2</td>
+                                <td class="px-3 align-middle" data-i18n="fields.ownerPhone2">Phone 2</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerPhone2-output">(empty)</span>
@@ -235,7 +235,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerEmail-label" data-i18n="fields.ownerEmail">Email</td>
+                                <td class="px-3 align-middle" data-i18n="fields.ownerEmail">Email</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerEmail-output">(empty)</span>
@@ -248,7 +248,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="ownerAddress-label" data-i18n="fields.ownerAddress">Address</td>
+                                <td class="px-3" data-i18n="fields.ownerAddress">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <p id="ownerAddress-output">(empty)</p>
@@ -265,7 +265,7 @@
             </div>
 
             <!-- Additional Owner Card -->
-            <div class="card m-3">
+            <div class="card  my-4">
                 <div class="card-header" id="owner2-card-header" data-i18n="sections.owner2Info">
                     <i class="fa-solid fa-user me-2"></i> Secondary Owner Information
                 </div>
@@ -277,7 +277,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Name-label" data-i18n="fields.owner2Name">Name</td>
+                                <td class="px-3 align-middle" data-i18n="fields.owner2Name">Name</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Name-output">(empty)</span>
@@ -289,7 +289,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Phone1-label" data-i18n="fields.owner2Phone1">Phone 1</td>
+                                <td class="px-3 align-middle" data-i18n="fields.owner2Phone1">Phone 1</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Phone1-output">(empty)</span>
@@ -302,7 +302,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Phone2-label" data-i18n="fields.owner2Phone2">Phone 2</td>
+                                <td class="px-3 align-middle" data-i18n="fields.owner2Phone2">Phone 2</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Phone2-output">(empty)</span>
@@ -315,7 +315,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Email-label" data-i18n="fields.owner2Email">Email</td>
+                                <td class="px-3 align-middle" data-i18n="fields.owner2Email">Email</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Email-output">(empty)</span>
@@ -328,7 +328,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="owner2Address-label" data-i18n="fields.owner2Address">Address</td>
+                                <td class="px-3" data-i18n="fields.owner2Address">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Address-output">(empty)</span>
@@ -345,7 +345,7 @@
             </div>
 
             <!-- Identification Card -->
-            <div class="card m-3">
+            <div class="card my-4">
                 <div class="card-header" id="identification-card-header" data-i18n="sections.identificationInfo">
                     <i class="fa-solid fa-fingerprint me-2"></i> Identification & Registration
                 </div>
@@ -357,7 +357,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="chipId-label" data-i18n="fields.chipId">Chip ID</td>
+                                <td class="px-3 align-middle" data-i18n="fields.chipId">Chip ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="chipId-output">(empty)</span>
@@ -368,7 +368,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="chip-location-label" data-i18n="fields.chipLocation">Chip Location</td>
+                                <td class="px-3 align-middle" data-i18n="fields.chipLocation">Chip Location</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="chipLocation-output">(empty)</span>
@@ -380,7 +380,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="tassoId-label" data-i18n="fields.tassoId">Tasso ID</td>
+                                <td class="px-3 align-middle" data-i18n="fields.tassoId">Tasso ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="tassoId-output">(empty)</span>
@@ -392,7 +392,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="insuranceId-label" data-i18n="fields.insuranceId">Insurance ID</td>
+                                <td class="px-3 align-middle" data-i18n="fields.insuranceId">Insurance ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="insuranceId-output">(empty)</span>
@@ -404,7 +404,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="taxId-label" data-i18n="fields.taxId">Tax ID</td>
+                                <td class="px-3 align-middle" data-i18n="fields.taxId">Tax ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="taxId-output">(empty)</span>
@@ -420,7 +420,7 @@
             </div>
 
             <!-- Health Card -->
-            <div class="card m-3">
+            <div class="card my-4">
                 <div class="card-header" id="health-card-header" data-i18n="sections.healthInfo">
                     <i class="fa-solid fa-heartbeat me-2"></i> Health Information
                 </div>
@@ -432,7 +432,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="allergies-label" data-i18n="fields.allergies">Allergies</td>
+                                <td class="px-3 align-middle" data-i18n="fields.allergies">Allergies</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="allergies-output">(empty)</span>
@@ -444,7 +444,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="diseases-label" data-i18n="fields.diseases">Diseases</td>
+                                <td class="px-3 align-middle" data-i18n="fields.diseases">Diseases</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="diseases-output">(empty)</span>
@@ -456,7 +456,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="medications-label" data-i18n="fields.medications">Medications</td>
+                                <td class="px-3 align-middle" data-i18n="fields.medications">Medications</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="medications-output">(empty)</span>
@@ -473,7 +473,7 @@
             </div>
 
             <!-- Vet Card -->
-            <div class="card m-3">
+            <div class="card my-4">
                 <div class="card-header" id="vet-card-header" data-i18n="sections.vetInfo">
                     <i class="fa-solid fa-user-doctor me-2"></i> Veterinarian Information
                 </div>
@@ -485,7 +485,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="vetName-label" data-i18n="fields.vetName">Name</td>
+                                <td class="px-3 align-middle" data-i18n="fields.vetName">Name</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetName-output">(empty)</span>
@@ -497,7 +497,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="vetPhone-label" data-i18n="fields.vetPhone">Phone</td>
+                                <td class="px-3 align-middle" data-i18n="fields.vetPhone">Phone</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetPhone-output">(empty)</span>
@@ -510,7 +510,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="vetEmail-label" data-i18n="fields.vetEmail">Email</td>
+                                <td class="px-3 align-middle" data-i18n="fields.vetEmail">Email</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetEmail-output">(empty)</span>
@@ -523,7 +523,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="vetAddress-label" data-i18n="fields.vetAddress">Address</td>
+                                <td class="px-3" data-i18n="fields.vetAddress">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetAddress-output">(empty)</span>
@@ -540,7 +540,7 @@
             </div>
 
             <!-- Notes Card -->
-            <div class="card m-3">
+            <div class="card my-4">
                 <div class="card-header" id="notes-card-header" data-i18n="sections.additionalNotes">
                     <i class="fa-solid fa-note-sticky me-2"></i> Additional Notes
                 </div>
@@ -556,7 +556,7 @@
             </div>
 
             <!-- Configuration Output -->
-            <div class="card m-3 edit-mode">
+            <div class="card my-4 edit-mode">
                 <div class="card-header" id="configuration-card-header" data-i18n="sections.configuration">
                     <i class="fa-solid fa-gear me-2"></i> Configuration
                 </div>
@@ -578,9 +578,8 @@
     <!-- Footer -->
     <footer>
         <div class="text-center p-3">
-            <a class="btn btn-outline-secondary btn-sm" href="https://github.com/yourusername/OpenDogTag"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github me-2"></i><span data-i18n="footer.visitGithub">Visit on GitHub</span>
+            <a class="icon-button" href="https://github.com/yourusername/OpenDogTag" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github fa-2x"></i>
             </a>
             <!-- TODO: Add Buy Me a Coffee link -->
             <!-- TODO: Add Link to Documentation -->

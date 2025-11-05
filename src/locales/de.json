@@ -103,8 +103,5 @@
   "messages": {
     "configCopied": "Konfiguration in Zwischenablage kopiert",
     "configUrlLabel": "Konfigurations-URL"
-  },
-  "footer": {
-    "visitGithub": "Auf GitHub besuchen"
   }
 }

@@ -103,8 +103,5 @@
   "messages": {
     "configCopied": "Configuration copied to clipboard",
     "configUrlLabel": "Configuration URL"
-  },
-  "footer": {
-    "visitGithub": "Visit on GitHub"
   }
 }
