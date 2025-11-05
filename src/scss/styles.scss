@@ -1,41 +1,11 @@
-// Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
 
 // Import Bootstrap Icons
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+// Import custom themes
+@import "theme-light";
+@import "theme-dark";
+
 // Custom styles
-.label-column {
-    width: 40%;
-}
-
-.value-column {
-    width: 60%;
-}
-
-#unsaved-changes-warning {
-    display: none;
-}
-
-#main-content-container {
-    max-width: 42rem;
-}
-
-#config-output {
-    word-break: break-all;
-}
-
-#brand-name {
-    font-size: 1.5rem;
-    line-height: 1.2;
-}
-
-#brand-text {
-    font-size: 0.75rem;
-    margin-top: -0.25rem;
-}
-
-#brand-logo {
-    width: 60px;
-    height: 48px;
-}
+@import "extra";

@@ -1,0 +1,46 @@
+html, body {
+    height: 100%;
+}
+
+.label-column {
+    width: 40%;
+}
+
+.value-column {
+    width: 60%;
+}
+
+#main-content-container {
+    max-width: 42rem;
+}
+
+#unsaved-changes-warning {
+    display: none;
+}
+
+#config-output {
+    word-break: break-all;
+}
+
+#brand-name {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+#brand-text {
+    font-size: 0.75rem;
+    margin-top: -0.25rem;
+}
+
+#brand-logo {
+    width: 60px;
+    height: 48px;
+}
+
+nav {
+    background-color: var(--bs-navbar-bg);
+}
+
+footer {
+    background-color: var(--bs-footer-bg);
+}

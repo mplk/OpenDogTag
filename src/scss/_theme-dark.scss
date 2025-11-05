@@ -1,0 +1,17 @@
+// Dark Theme
+[data-bs-theme="dark"] {
+  --bs-body-color: #007a8f; /* Hedlines */
+  --bs-body-bg: #000e06; /* Background */
+
+  --bs-secondary-color: #00d9ff; /* Some text in forms */
+  --bs-secondary-bg: #ff0000;
+
+  --bs-tertiary-color: #ff0000;
+  --bs-tertiary-bg: #008080; /* Unit sections in Forms */
+
+  --bs-emphasis-color: #99ecd0; /* Text emphasis */
+  --bs-border-color: #00210c; /* Form Borders */
+
+  --bs-navbar-bg: #1a364b; /* Navbar background */
+  --bs-footer-bg: #1a364b; /* Footer background */
+}
