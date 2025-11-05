@@ -1,0 +1,110 @@
+{
+  "navbar": {
+    "title": "OpenDogTag",
+    "subtitle": "Open Source Notfall-NFC-Tag für Hunde",
+    "toggleTheme": "Design wechseln",
+    "editButton": "Bearbeiten",
+    "viewButton": "Ansehen"
+  },
+  "warnings": {
+    "unsavedChanges": "Sie haben nicht gespeicherte Änderungen. Bitte speichern Sie Ihre Änderungen, bevor Sie diese Seite verlassen."
+  },
+  "greeting": {
+    "view": "Hallo, ich bin {{name}}!",
+    "edit": "Hallo, ich bin"
+  },
+  "sections": {
+    "basicInfo": "Grundinformationen",
+    "ownerInfo": "Besitzerinformationen",
+    "owner2Info": "Zweiter Besitzer",
+    "identificationInfo": "Identifikation & Registrierung",
+    "healthInfo": "Gesundheitsinformationen",
+    "vetInfo": "Tierarztinformationen",
+    "additionalNotes": "Zusätzliche Notizen",
+    "configuration": "Konfiguration"
+  },
+  "fields": {
+    "name": "Name",
+    "sex": "Geschlecht",
+    "neutered": "Kastriert/Sterilisiert",
+    "birthday": "Geburtstag",
+    "age": "Alter",
+    "breed": "Rasse",
+    "height": "Größe (cm)",
+    "weight": "Gewicht (kg)",
+    "character": "Charakter",
+    "specialAttributes": "Besondere Merkmale",
+    "ownerName": "Name",
+    "ownerPhone1": "Telefon 1",
+    "ownerPhone2": "Telefon 2",
+    "ownerEmail": "E-Mail",
+    "ownerAddress": "Adresse",
+    "owner2Name": "Name",
+    "owner2Phone1": "Telefon 1",
+    "owner2Phone2": "Telefon 2",
+    "owner2Email": "E-Mail",
+    "owner2Address": "Adresse",
+    "chipId": "Chip-ID",
+    "chipLocation": "Chip-Position",
+    "tassoId": "TASSO-ID",
+    "insuranceId": "Versicherungs-ID",
+    "taxId": "Steuer-ID",
+    "allergies": "Allergien",
+    "diseases": "Erkrankungen",
+    "medications": "Medikamente",
+    "vetName": "Name",
+    "vetPhone": "Telefon",
+    "vetEmail": "E-Mail",
+    "vetAddress": "Adresse",
+    "notes": "Notizen"
+  },
+  "values": {
+    "female": "Weiblich",
+    "male": "Männlich",
+    "yes": "Ja",
+    "no": "Nein",
+    "unknown": "Unbekannt",
+    "empty": "(leer)"
+  },
+  "age": {
+    "years": "Jahre",
+    "months": "Monate"
+  },
+  "placeholders": {
+    "name": "Name des Hundes eingeben",
+    "breed": "z.B. Golden Retriever",
+    "height": "Größe in cm",
+    "weight": "Gewicht in kg",
+    "character": "z.B. Freundlich, energisch",
+    "specialAttributes": "z.B. Blaues Halsband, weißer Fleck auf der Brust",
+    "ownerName": "Ihr Name",
+    "ownerPhone1": "Haupttelefonnummer",
+    "ownerPhone2": "Alternative Telefonnummer",
+    "ownerEmail": "ihre.email@beispiel.de",
+    "ownerAddress": "Straße und Hausnummer\nStadt, Postleitzahl\nLand",
+    "chipId": "15-stellige Mikrochip-Nummer",
+    "chipLocation": "z.B. Linke Schulter",
+    "tassoId": "TASSO-Registrierungsnummer",
+    "insuranceId": "Haustierversicherungs-ID",
+    "taxId": "Hundesteuer-ID",
+    "allergies": "Bekannte Allergien",
+    "diseases": "Medizinische Bedingungen",
+    "medications": "Aktuelle Medikamente",
+    "vetName": "Name des Tierarztes",
+    "vetPhone": "Telefonnummer der Klinik",
+    "vetEmail": "klinik@beispiel.de",
+    "vetAddress": "Adresse der Klinik",
+    "notes": "Weitere wichtige Informationen"
+  },
+  "buttons": {
+    "preview": "Vorschau",
+    "copy": "Kopieren"
+  },
+  "messages": {
+    "configCopied": "Konfiguration in Zwischenablage kopiert",
+    "configUrlLabel": "Konfigurations-URL"
+  },
+  "footer": {
+    "visitGithub": "Auf GitHub besuchen"
+  }
+}

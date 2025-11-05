@@ -6,6 +6,7 @@ import '../scss/styles.scss';
 
 import { validateInput } from './validation.js';
 import { calculateAge } from './helpers.js';
+import i18next, { i18nextPromise, updateContent, changeLanguage, translate } from './i18n.js';
 
 const delimiter = '~';
 const newLinePlaceholder = '°';
@@ -134,11 +135,16 @@ function populateOutputFields() {
         if (tagData[field]) {
             switch (field) {
                 // TODO: improve formatting for address fields
+                case 'name':
+                    // Update the greeting with the dog's name
+                    $('#greeting-view').text(translate('greeting.view', { name: tagData[field] }));
+                    $(`#${field}-output`).text(tagData[field]);
+                    break;
                 case 'sex':
-                    tagData[field] === '0' ? $(`#${field}-output`).text('Female') : $(`#${field}-output`).text('Male');
+                    tagData[field] === '0' ? $(`#${field}-output`).text(translate('values.female')) : $(`#${field}-output`).text(translate('values.male'));
                     break;
                 case 'neutered':
-                    tagData[field] === '1' ? $(`#${field}-output`).text('Yes') : $(`#${field}-output`).text('No');
+                    tagData[field] === '1' ? $(`#${field}-output`).text(translate('values.yes')) : $(`#${field}-output`).text(translate('values.no'));
                     break;
                 case 'birthday':
                     const date = tagData[field];
@@ -146,10 +152,10 @@ function populateOutputFields() {
                         const [year, month, day] = date.split('-');
                         const formattedDate = `${day}.${month}.${year}`;
                         $(`#${field}-output`).text(formattedDate);
-                        $('#age-output').text(calculateAge(formattedDate) || 'Unknown');
+                        $('#age-output').text(calculateAge(formattedDate) || translate('values.unknown'));
                     } else {
-                        $(`#${field}-output`).text('Unknown');
-                        $('#age-output').text('Unknown');
+                        $(`#${field}-output`).text(translate('values.unknown'));
+                        $('#age-output').text(translate('values.unknown'));
                     }
                     break;
                 case 'ownerAddress':
@@ -162,6 +168,9 @@ function populateOutputFields() {
                 default:
                     $(`#${field}-output`).text(tagData[field]);
             }
+        } else {
+            // Set empty text for fields without data
+            $(`#${field}-output`).text(translate('values.empty'));
         }
     });
 }
@@ -251,9 +260,19 @@ $(function () {
     tagData = decodeTagData(urlParams.get('d'));
     console.log('Dog tag data loaded: ', tagData);
 
-    // Populate the fields with decoded parameters
-    populateOutputFields();
-    populateInputFields();
+    // Wait for i18next to initialize before populating fields
+    i18nextPromise.then(() => {
+        // Update static content first
+        updateContent();
+        
+        // Then populate fields with data (uses translate() for dynamic values)
+        populateOutputFields();
+        populateInputFields();
+        
+        // Set language selector to current language (handle cases like 'en-US' -> 'en')
+        const currentLang = i18next.language.split('-')[0];
+        $('#language-selector').val(currentLang);
+    });
 
     // Set initial mode based on URL parameter
     currentMode = urlParams.has('e') ? 'edit' : 'view';
@@ -274,6 +293,13 @@ $(function () {
     $('#theme-toggle-button').on('click', function () {
         currentTheme = currentTheme === 'light' ? 'dark' : 'light';
         setTheme(currentTheme);
+    });
+
+    // Language switcher
+    $('#language-selector').on('change', function () {
+        const selectedLang = $(this).val();
+        changeLanguage(selectedLang);
+        populateOutputFields(); // Re-populate to update translated values
     });
 
     // Initial configuration link update
@@ -303,7 +329,7 @@ $(function () {
         this.select();
         try {
             navigator.clipboard.writeText($('#config-output').val()).then(function () {
-                alert('Configuration copied to clipboard');
+                alert(translate('messages.configCopied'));
             }).catch(function (err) {
                 console.error('Error copying text: ', err);
             });

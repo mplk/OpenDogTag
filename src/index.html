@@ -16,14 +16,18 @@
             <a class="navbar-brand" href="#">
                 <img src="/favicon.svg" class="d-inline-block align-middle" id="brand-logo">
                 <div class="d-inline-block align-middle">
-                    <div id="brand-name">OpenDogTag</div>
-                    <div class="navbar-text d-none d-md-block" id="brand-text">
+                    <div id="brand-name" data-i18n="navbar.title">OpenDogTag</div>
+                    <div class="navbar-text d-none d-md-block" id="brand-text" data-i18n="navbar.subtitle">
                         Open Source Emergency NFC Tag for Dogs
                     </div>
                 </div>
             </a>
             <div class="d-flex gap-2">
-                <button class="btn btn-outline-secondary" id="theme-toggle-button" title="Toggle theme">
+                <select class="form-select form-select-sm" id="language-selector" style="width: auto;">
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+                <button class="btn btn-outline-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme" title="Toggle theme">
                     <i class="fa-solid fa-moon" id="theme-icon"></i>
                 </button>
                 <button class="btn btn-outline-secondary" id="edit-navbar-button">
@@ -39,7 +43,7 @@
     </nav>
 
     <!-- Warning Message -->
-    <div class="alert alert-warning m-3" id="unsaved-changes-warning">
+    <div class="alert alert-warning m-3" id="unsaved-changes-warning" data-i18n="warnings.unsavedChanges">
         You have unsaved changes. Please save your changes before leaving this page.
     </div>
 
@@ -47,15 +51,15 @@
     <main class="flex-fill">
         <div class="container" id="main-content-container">
             <h2 class="m-3 text-center">
-                <div class="view-mode d-inline">Hi I'm <span id="name-output"></span>!</div>
-                <div class="edit-mode d-inline">Hi I'm <input class="form-control form-control-lg d-inline-block w-auto"
-                        id="name-input" type="text" placeholder="Name of your dog"> !</div>
+                <div class="view-mode d-inline"><span id="greeting-view"></span></div>
+                <div class="edit-mode d-inline"><span data-i18n="greeting.edit">Hi I'm</span> <input class="form-control form-control-lg d-inline-block w-auto"
+                        id="name-input" type="text" data-i18n-placeholder="placeholders.name" placeholder="Name of your dog"> !</div>
             </h2>
 
             <!-- Profile Card -->
             <div class="card m-3">
-                <div class="card-header" id="profile-card-header">
-                    <i class="fa-solid fa-paw me-2"></i> Profile
+                <div class="card-header" id="profile-card-header" data-i18n="sections.basicInfo">
+                    <i class="fa-solid fa-paw me-2"></i> Basic Information
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -65,7 +69,7 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3" id="sex-label">Sex</td>
+                                <td class="px-3" id="sex-label" data-i18n="fields.sex">Sex</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="sex-output">(empty)</span>
@@ -74,18 +78,18 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="sex-input"
                                                 id="sex-female-input" value="female">
-                                            <label class="form-check-label" for="sex-female-input">Female</label>
+                                            <label class="form-check-label" for="sex-female-input" data-i18n="values.female">Female</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="sex-input"
                                                 id="sex-male-input" value="male">
-                                            <label class="form-check-label" for="sex-male-input">Male</label>
+                                            <label class="form-check-label" for="sex-male-input" data-i18n="values.male">Male</label>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="neutered-label">Neutered</td>
+                                <td class="px-3" id="neutered-label" data-i18n="fields.neutered">Neutered</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="neutered-output">(empty)</span>
@@ -97,7 +101,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="birthday-label">Birthday</td>
+                                <td class="px-3 align-middle" id="birthday-label" data-i18n="fields.birthday">Birthday</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="birthday-output">(empty)</span> (<span id="age-output">(empty)</span>)
@@ -108,19 +112,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="breed-label">Breed</td>
+                                <td class="px-3 align-middle" id="breed-label" data-i18n="fields.breed">Breed</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="breed-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="breed-input"
-                                            placeholder="Breed of your dog">
+                                            data-i18n-placeholder="placeholders.breed" placeholder="Breed of your dog">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="height-label">Height</td>
+                                <td class="px-3 align-middle" id="height-label" data-i18n="fields.height">Height</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="height-output">(empty)</span> cm
@@ -128,7 +132,7 @@
                                     <div class="edit-mode">
                                         <div class="input-group has-validation">
                                             <input type="number" class="form-control" id="height-input"
-                                                placeholder="Height of your dog" min="0" max="200" step="0.1">
+                                                data-i18n-placeholder="placeholders.height" placeholder="Height of your dog" min="0" max="200" step="0.1">
                                             <span class="input-group-text">cm</span>
                                             <div class="invalid-feedback">Please enter a valid height (0-200 cm)</div>
                                         </div>
@@ -136,7 +140,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="weight-label">Weight</td>
+                                <td class="px-3 align-middle" id="weight-label" data-i18n="fields.weight">Weight</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="weight-output">(empty)</span> kg
@@ -144,7 +148,7 @@
                                     <div class="edit-mode">
                                         <div class="input-group has-validation">
                                             <input type="number" class="form-control" id="weight-input"
-                                                placeholder="Weight of your dog" min="0" max="150" step="0.1">
+                                                data-i18n-placeholder="placeholders.weight" placeholder="Weight of your dog" min="0" max="150" step="0.1">
                                             <span class="input-group-text">kg</span>
                                             <div class="invalid-feedback">Please enter a valid weight (0-150 kg)</div>
                                         </div>
@@ -152,26 +156,26 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="character-label">Character</td>
+                                <td class="px-3 align-middle" id="character-label" data-i18n="fields.character">Character</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="character-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="character-input"
-                                            placeholder="Character of your dog">
+                                            data-i18n-placeholder="placeholders.character" placeholder="Character of your dog">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="special-attributes-label">Special Attributes</td>
+                                <td class="px-3 align-middle" id="special-attributes-label" data-i18n="fields.specialAttributes">Special Attributes</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="specialAttributes-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="specialAttributes-input"
-                                            placeholder="Special Attributes of your dog">
+                                            data-i18n-placeholder="placeholders.specialAttributes" placeholder="Special Attributes of your dog">
                                     </div>
                                 </td>
                             </tr>
@@ -182,8 +186,8 @@
 
             <!-- Owner Card -->
             <div class="card m-3">
-                <div class="card-header" id="owner-card-header">
-                    <i class="fa-solid fa-user me-2"></i> Owner
+                <div class="card-header" id="owner-card-header" data-i18n="sections.ownerInfo">
+                    <i class="fa-solid fa-user me-2"></i> Owner Information
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -193,65 +197,65 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerName-label">Name</td>
+                                <td class="px-3 align-middle" id="ownerName-label" data-i18n="fields.ownerName">Name</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerName-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="ownerName-input"
-                                            placeholder="Owner Name">
+                                            data-i18n-placeholder="placeholders.ownerName" placeholder="Owner Name">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerPhone1-label">Phone 1</td>
+                                <td class="px-3 align-middle" id="ownerPhone1-label" data-i18n="fields.ownerPhone1">Phone 1</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerPhone1-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="ownerPhone1-input"
-                                            placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
+                                            data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerPhone2-label">Phone 2</td>
+                                <td class="px-3 align-middle" id="ownerPhone2-label" data-i18n="fields.ownerPhone2">Phone 2</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerPhone2-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="ownerPhone2-input"
-                                            placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
+                                            data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="ownerEmail-label">Email</td>
+                                <td class="px-3 align-middle" id="ownerEmail-label" data-i18n="fields.ownerEmail">Email</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="ownerEmail-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="email" class="form-control" id="ownerEmail-input"
-                                            placeholder="Email">
+                                            data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
                                         <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="ownerAddress-label">Address</td>
+                                <td class="px-3" id="ownerAddress-label" data-i18n="fields.ownerAddress">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <p id="ownerAddress-output">(empty)</p>
                                     </div>
                                     <div class="edit-mode">
                                         <textarea class="form-control" id="ownerAddress-input" rows="4"
-                                            placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
+                                            data-i18n-placeholder="placeholders.ownerAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -262,8 +266,8 @@
 
             <!-- Additional Owner Card -->
             <div class="card m-3">
-                <div class="card-header" id="owner2-card-header">
-                    <i class="fa-solid fa-user me-2"></i> Additional Owner
+                <div class="card-header" id="owner2-card-header" data-i18n="sections.owner2Info">
+                    <i class="fa-solid fa-user me-2"></i> Secondary Owner Information
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -273,65 +277,65 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Name-label">Name</td>
+                                <td class="px-3 align-middle" id="owner2Name-label" data-i18n="fields.owner2Name">Name</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Name-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="owner2Name-input"
-                                            placeholder="Owner Name">
+                                            data-i18n-placeholder="placeholders.ownerName" placeholder="Owner Name">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Phone1-label">Phone 1</td>
+                                <td class="px-3 align-middle" id="owner2Phone1-label" data-i18n="fields.owner2Phone1">Phone 1</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Phone1-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="owner2Phone1-input"
-                                            placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
+                                            data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Phone2-label">Phone 2</td>
+                                <td class="px-3 align-middle" id="owner2Phone2-label" data-i18n="fields.owner2Phone2">Phone 2</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Phone2-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="owner2Phone2-input"
-                                            placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
+                                            data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="owner2Email-label">Email</td>
+                                <td class="px-3 align-middle" id="owner2Email-label" data-i18n="fields.owner2Email">Email</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Email-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="email" class="form-control" id="owner2Email-input"
-                                            placeholder="Email">
+                                            data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
                                         <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="owner2Address-label">Address</td>
+                                <td class="px-3" id="owner2Address-label" data-i18n="fields.owner2Address">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="owner2Address-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <textarea class="form-control" id="owner2Address-input" rows="4"
-                                            placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
+                                            data-i18n-placeholder="placeholders.ownerAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -342,8 +346,8 @@
 
             <!-- Identification Card -->
             <div class="card m-3">
-                <div class="card-header" id="identification-card-header">
-                    <i class="fa-solid fa-fingerprint me-2"></i> Identification
+                <div class="card-header" id="identification-card-header" data-i18n="sections.identificationInfo">
+                    <i class="fa-solid fa-fingerprint me-2"></i> Identification & Registration
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -353,60 +357,60 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="chipId-label">Chip ID</td>
+                                <td class="px-3 align-middle" id="chipId-label" data-i18n="fields.chipId">Chip ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="chipId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="chipId-input" placeholder="Chip ID">
+                                        <input type="text" class="form-control" id="chipId-input" data-i18n-placeholder="placeholders.chipId" placeholder="Chip ID">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="chip-location-label">Chip Location</td>
+                                <td class="px-3 align-middle" id="chip-location-label" data-i18n="fields.chipLocation">Chip Location</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="chipLocation-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="chipLocation-input"
-                                            placeholder="Chip Location">
+                                            data-i18n-placeholder="placeholders.chipLocation" placeholder="Chip Location">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="tassoId-label">Tasso ID</td>
+                                <td class="px-3 align-middle" id="tassoId-label" data-i18n="fields.tassoId">Tasso ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="tassoId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="tassoId-input"
-                                            placeholder="Tasso ID">
+                                            data-i18n-placeholder="placeholders.tassoId" placeholder="Tasso ID">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="insuranceId-label">Insurance ID</td>
+                                <td class="px-3 align-middle" id="insuranceId-label" data-i18n="fields.insuranceId">Insurance ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="insuranceId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="insuranceId-input"
-                                            placeholder="Insurance ID">
+                                            data-i18n-placeholder="placeholders.insuranceId" placeholder="Insurance ID">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="taxId-label">Tax ID</td>
+                                <td class="px-3 align-middle" id="taxId-label" data-i18n="fields.taxId">Tax ID</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="taxId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="taxId-input" placeholder="Tax ID">
+                                        <input type="text" class="form-control" id="taxId-input" data-i18n-placeholder="placeholders.taxId" placeholder="Tax ID">
                                     </div>
                                 </td>
                             </tr>
@@ -417,8 +421,8 @@
 
             <!-- Health Card -->
             <div class="card m-3">
-                <div class="card-header" id="health-card-header">
-                    <i class="fa-solid fa-heartbeat me-2"></i> Health
+                <div class="card-header" id="health-card-header" data-i18n="sections.healthInfo">
+                    <i class="fa-solid fa-heartbeat me-2"></i> Health Information
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -428,38 +432,38 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="allergies-label">Allergies</td>
+                                <td class="px-3 align-middle" id="allergies-label" data-i18n="fields.allergies">Allergies</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="allergies-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="allergies-input"
-                                            placeholder="Allergies">
+                                            data-i18n-placeholder="placeholders.allergies" placeholder="Allergies">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="diseases-label">Diseases</td>
+                                <td class="px-3 align-middle" id="diseases-label" data-i18n="fields.diseases">Diseases</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="diseases-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="diseases-input"
-                                            placeholder="Diseases">
+                                            data-i18n-placeholder="placeholders.diseases" placeholder="Diseases">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="medications-label">Medications</td>
+                                <td class="px-3 align-middle" id="medications-label" data-i18n="fields.medications">Medications</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="medications-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="medications-input"
-                                            placeholder="Medications">
+                                            data-i18n-placeholder="placeholders.medications" placeholder="Medications">
                                     </div>
                                 </td>
                             </tr>
@@ -470,8 +474,8 @@
 
             <!-- Vet Card -->
             <div class="card m-3">
-                <div class="card-header" id="vet-card-header">
-                    <i class="fa-solid fa-user-doctor me-2"></i> Vet
+                <div class="card-header" id="vet-card-header" data-i18n="sections.vetInfo">
+                    <i class="fa-solid fa-user-doctor me-2"></i> Veterinarian Information
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -481,52 +485,52 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <td class="px-3 align-middle" id="vetName-label">Name</td>
+                                <td class="px-3 align-middle" id="vetName-label" data-i18n="fields.vetName">Name</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetName-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="text" class="form-control" id="vetName-input"
-                                            placeholder="Vet Name">
+                                            data-i18n-placeholder="placeholders.vetName" placeholder="Vet Name">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="vetPhone-label">Phone</td>
+                                <td class="px-3 align-middle" id="vetPhone-label" data-i18n="fields.vetPhone">Phone</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetPhone-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="tel" class="form-control" id="vetPhone-input" placeholder="Phone"
+                                        <input type="tel" class="form-control" id="vetPhone-input" data-i18n-placeholder="placeholders.vetPhone" placeholder="Phone"
                                             pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3 align-middle" id="vetEmail-label">Email</td>
+                                <td class="px-3 align-middle" id="vetEmail-label" data-i18n="fields.vetEmail">Email</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetEmail-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <input type="email" class="form-control" id="vetEmail-input"
-                                            placeholder="Email">
+                                            data-i18n-placeholder="placeholders.vetEmail" placeholder="Email">
                                         <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-3" id="vetAddress-label">Address</td>
+                                <td class="px-3" id="vetAddress-label" data-i18n="fields.vetAddress">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
                                         <span id="vetAddress-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
                                         <textarea class="form-control" id="vetAddress-input" rows="4"
-                                            placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
+                                            data-i18n-placeholder="placeholders.vetAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -537,8 +541,8 @@
 
             <!-- Notes Card -->
             <div class="card m-3">
-                <div class="card-header" id="notes-card-header">
-                    <i class="fa-solid fa-note-sticky me-2"></i> Notes
+                <div class="card-header" id="notes-card-header" data-i18n="sections.additionalNotes">
+                    <i class="fa-solid fa-note-sticky me-2"></i> Additional Notes
                 </div>
                 <div class="card-body">
                     <div class="view-mode">
@@ -546,15 +550,15 @@
                     </div>
                     <div class="edit-mode">
                         <textarea class="form-control" id="notes-input" rows="4"
-                            placeholder="Additional notes"></textarea>
+                            data-i18n-placeholder="placeholders.notes" placeholder="Additional notes"></textarea>
                     </div>
                 </div>
             </div>
 
             <!-- Configuration Output -->
             <div class="card m-3 edit-mode">
-                <div class="card-header" id="identification-card-header">
-                    Configuration Output
+                <div class="card-header" id="configuration-card-header" data-i18n="sections.configuration">
+                    <i class="fa-solid fa-gear me-2"></i> Configuration
                 </div>
                 <div class="card-body">
                     <textarea class="form-control" id="config-output" rows="6" readonly></textarea>
@@ -563,7 +567,7 @@
                         <span class="badge bg-info text-bg-info" id="byte-counter">0 bytes</span>
                     </div>
                     <button class="btn btn-primary mt-2 w-100" id="preview-button">
-                        <i class="fa-solid fa-external-link-alt me-2"></i>Preview in New Window
+                        <i class="fa-solid fa-external-link-alt me-2"></i><span data-i18n="buttons.preview">Preview</span> in New Window
                     </button>
                 </div>
             </div>
@@ -576,7 +580,7 @@
         <div class="text-center p-3">
             <a class="btn btn-outline-secondary btn-sm" href="https://github.com/yourusername/OpenDogTag"
                 target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github me-2"></i>Visit on GitHub
+                <i class="fa-brands fa-github me-2"></i><span data-i18n="footer.visitGithub">Visit on GitHub</span>
             </a>
             <!-- TODO: Add Buy Me a Coffee link -->
             <!-- TODO: Add Link to Documentation -->

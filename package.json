@@ -9,14 +9,16 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.1.7",
-    "sass": "^1.93.3"
+    "sass": "^1.93.3",
+    "vite": "^7.1.7"
   },
   "dependencies": {
-    "jquery": "^3.7.1",
-    "bootstrap": "^5.3.8",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@popperjs/core": "^2.11.8",
-    "lz-string": "^1.5.0",
-    "@fortawesome/fontawesome-free": "^7.1.0"
+    "bootstrap": "^5.3.8",
+    "i18next": "^25.6.0",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "jquery": "^3.7.1",
+    "lz-string": "^1.5.0"
   }
 }

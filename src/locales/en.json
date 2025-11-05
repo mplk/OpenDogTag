@@ -1,0 +1,110 @@
+{
+  "navbar": {
+    "title": "OpenDogTag",
+    "subtitle": "Open Source Emergency NFC Tag for Dogs",
+    "toggleTheme": "Toggle theme",
+    "editButton": "Edit",
+    "viewButton": "View"
+  },
+  "warnings": {
+    "unsavedChanges": "You have unsaved changes. Please save your changes before leaving this page."
+  },
+  "greeting": {
+    "view": "Hi I'm {{name}}!",
+    "edit": "Hi I'm"
+  },
+  "sections": {
+    "basicInfo": "Basic Information",
+    "ownerInfo": "Owner Information",
+    "owner2Info": "Secondary Owner Information",
+    "identificationInfo": "Identification & Registration",
+    "healthInfo": "Health Information",
+    "vetInfo": "Veterinarian Information",
+    "additionalNotes": "Additional Notes",
+    "configuration": "Configuration"
+  },
+  "fields": {
+    "name": "Name",
+    "sex": "Sex",
+    "neutered": "Neutered/Spayed",
+    "birthday": "Birthday",
+    "age": "Age",
+    "breed": "Breed",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "character": "Character",
+    "specialAttributes": "Special Attributes",
+    "ownerName": "Name",
+    "ownerPhone1": "Phone 1",
+    "ownerPhone2": "Phone 2",
+    "ownerEmail": "Email",
+    "ownerAddress": "Address",
+    "owner2Name": "Name",
+    "owner2Phone1": "Phone 1",
+    "owner2Phone2": "Phone 2",
+    "owner2Email": "Email",
+    "owner2Address": "Address",
+    "chipId": "Chip ID",
+    "chipLocation": "Chip Location",
+    "tassoId": "TASSO ID",
+    "insuranceId": "Insurance ID",
+    "taxId": "Tax ID",
+    "allergies": "Allergies",
+    "diseases": "Diseases",
+    "medications": "Medications",
+    "vetName": "Name",
+    "vetPhone": "Phone",
+    "vetEmail": "Email",
+    "vetAddress": "Address",
+    "notes": "Notes"
+  },
+  "values": {
+    "female": "Female",
+    "male": "Male",
+    "yes": "Yes",
+    "no": "No",
+    "unknown": "Unknown",
+    "empty": "(empty)"
+  },
+  "age": {
+    "years": "years",
+    "months": "months"
+  },
+  "placeholders": {
+    "name": "Enter dog's name",
+    "breed": "e.g., Golden Retriever",
+    "height": "Height in cm",
+    "weight": "Weight in kg",
+    "character": "e.g., Friendly, energetic",
+    "specialAttributes": "e.g., Blue collar, white spot on chest",
+    "ownerName": "Your name",
+    "ownerPhone1": "Primary phone number",
+    "ownerPhone2": "Alternative phone number",
+    "ownerEmail": "your.email@example.com",
+    "ownerAddress": "Street address\nCity, Postal Code\nCountry",
+    "chipId": "15-digit microchip number",
+    "chipLocation": "e.g., Left shoulder",
+    "tassoId": "TASSO registration number",
+    "insuranceId": "Pet insurance ID",
+    "taxId": "Dog tax ID number",
+    "allergies": "Known allergies",
+    "diseases": "Medical conditions",
+    "medications": "Current medications",
+    "vetName": "Veterinarian's name",
+    "vetPhone": "Clinic phone number",
+    "vetEmail": "clinic@example.com",
+    "vetAddress": "Clinic address",
+    "notes": "Any additional important information"
+  },
+  "buttons": {
+    "preview": "Preview",
+    "copy": "Copy"
+  },
+  "messages": {
+    "configCopied": "Configuration copied to clipboard",
+    "configUrlLabel": "Configuration URL"
+  },
+  "footer": {
+    "visitGithub": "Visit on GitHub"
+  }
+}

@@ -1,3 +1,5 @@
+import i18next from './i18n.js';
+
 export function calculateAge(birthday) {
     // Parse dd.mm.yyyy format
     const parts = birthday.split('.');
@@ -14,5 +16,5 @@ export function calculateAge(birthday) {
         months += 12;
     }
 
-    return `${years} years ${months} months`;
+    return `${years} ${i18next.t('age.years')} ${months} ${i18next.t('age.months')}`;
 }
