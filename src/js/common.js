@@ -3,7 +3,7 @@ import '../scss/styles.scss';
 import LZString from 'lz-string';
 
 const delimiter = '~';
-export const fields = ['name', 'sex', 'neutered', 'birthday', 'breed', 'height', 'weight', 'character', 'specialAttributes', 'chipId', 'chipLocation', 'tassoId', 'insuranceId', 'taxId'];
+export const fields = ['name', 'sex', 'neutered', 'birthday', 'breed', 'height', 'weight', 'character', 'specialAttributes', 'ownerName', 'ownerPhone1', 'ownerPhone2', 'ownerEmail', 'ownerAddress', 'chipId', 'chipLocation', 'tassoId', 'insuranceId', 'taxId', 'allergies', 'diseases', 'medications', 'vetName', 'vetPhone', 'vetAddress', 'notes'];
 
 export function decodeUrlParams(urlParams) {
     const dataParameter = urlParams.get('d');

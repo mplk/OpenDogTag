@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { fields, decodeUrlParams, calculateAge } from './common.js';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 $(function () {
@@ -12,6 +13,7 @@ $(function () {
     fields.forEach(field => {
         if(params[field]) {
             switch (field) {
+                // TODO: improve formatting for address fields
                 case 'sex':
                     params[field] === '0' ? $(`#${field}`).text('Female') : $(`#${field}`).text('Male');
                     break;
@@ -36,6 +38,28 @@ $(function () {
         } else {
             // If parameter is null hide the complete row
             $(`#${field}`).closest('tr').hide();
+        }
+    });
+
+    // Hide cards that have no visible rows
+    $('.card').each(function() {
+        const $card = $(this);
+        const $table = $card.find('table tbody');
+        
+        // Check if this card has a table with rows
+        if ($table.length > 0) {
+            const visibleRows = $table.find('tr:visible').length;
+            
+            // If no visible rows, hide the entire card
+            if (visibleRows === 0) {
+                $card.hide();
+            }
+        } else {
+            // For cards without tables (like Notes), check if content is empty
+            const $notes = $card.find('#notes');
+            if ($notes.length > 0 && $notes.text() === '(empty)') {
+                $card.hide();
+            }
         }
     });
 

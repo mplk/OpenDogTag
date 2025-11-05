@@ -17,7 +17,7 @@
                 <img src="/favicon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 OpenDogTag
             </a>
-            <span class="navbar-text" id="navbar-text">
+            <span class="navbar-text d-none d-md-inline" id="navbar-text">
                 Open Source Emergency NFC Tag
             </span>
         </div>
@@ -30,7 +30,7 @@
         <!-- Profile Card -->
         <div class="card m-3">
             <div class="card-header" id="profile-card-header">
-                Profile
+                <i class="fa-solid fa-paw me-2"></i> Profile
             </div>
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
@@ -76,10 +76,10 @@
             </div>
         </div>
 
-        <!-- Identification Card -->
+        <!-- Owner Card -->
         <div class="card m-3">
-            <div class="card-header" id="identification-card-header">
-                Identification
+            <div class="card-header" id="owner-card-header">
+                <i class="fa-solid fa-user me-2"></i> Owner
             </div>
             <div class="card-body p-0 pb-2">
                 <table class="table table-borderless table-hover m-0">
@@ -89,7 +89,44 @@
                     </colgroup>
                     <tbody>
                         <tr>
-                            <td class="px-3" id="chipped-label">Chip ID</td>
+                            <td class="px-3" id="ownerName-label">Name</td>
+                            <td class="px-3"><span id="ownerName">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="ownerPhone1-label">Phone 1</td>
+                            <td class="px-3"><span id="ownerPhone1">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="ownerPhone2-label">Phone 2</td>
+                            <td class="px-3"><span id="ownerPhone2">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="ownerEmail-label">Email</td>
+                            <td class="px-3"><span id="ownerEmail">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="ownerAddress-label">Address</td>
+                            <td class="px-3"><span id="ownerAddress">(empty)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Identification Card -->
+        <div class="card m-3">
+            <div class="card-header" id="identification-card-header">
+                <i class="fa-solid fa-fingerprint me-2"></i> Identification
+            </div>
+            <div class="card-body p-0 pb-2">
+                <table class="table table-borderless table-hover m-0">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="px-3" id="chipId-label">Chip ID</td>
                             <td class="px-3"><span id="chipId">(empty)</span></td>
                         </tr>
                         <tr>
@@ -97,19 +134,87 @@
                             <td class="px-3"><span id="chipLocation">(empty)</span></td>
                         </tr>
                         <tr>
-                            <td class="px-3" id="tasso-id-label">Tasso ID</td>
+                            <td class="px-3" id="tassoId-label">Tasso ID</td>
                             <td class="px-3"><span id="tassoId">(empty)</span></td>
                         </tr>
                         <tr>
-                            <td class="px-3" id="insurance-id-label">Insurance ID</td>
+                            <td class="px-3" id="insuranceId-label">Insurance ID</td>
                             <td class="px-3"><span id="insuranceId">(empty)</span></td>
                         </tr>
                         <tr>
-                            <td class="px-3" id="tax-id-label">Tax ID</td>
+                            <td class="px-3" id="taxId-label">Tax ID</td>
                             <td class="px-3"><span id="taxId">(empty)</span></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- Health Card -->
+        <div class="card m-3">
+            <div class="card-header" id="health-card-header">
+                <i class="fa-solid fa-heartbeat me-2"></i> Health
+            </div>
+            <div class="card-body p-0 pb-2">
+                <table class="table table-borderless table-hover m-0">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="px-3" id="allergies-label">Allergies</td>
+                            <td class="px-3"><span id="allergies">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="diseases-label">Diseases</td>
+                            <td class="px-3"><span id="diseases">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="medications-label">Medications</td>
+                            <td class="px-3"><span id="medications">(empty)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Vet Card -->
+        <div class="card m-3">
+            <div class="card-header" id="vet-card-header">
+                <i class="fa-solid fa-user-doctor me-2"></i> Vet
+            </div>
+            <div class="card-body p-0 pb-2">
+                <table class="table table-borderless table-hover m-0">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="px-3" id="vetName-label">Name</td>
+                            <td class="px-3"><span id="vetName">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="vetPhone-label">Phone 1</td>
+                            <td class="px-3"><span id="vetPhone">(empty)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-3" id="vetAddress-label">Address</td>
+                            <td class="px-3"><span id="vetAddress">(empty)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Notes Card -->
+        <div class="card m-3">
+            <div class="card-header" id="notes-card-header">
+                <i class="fa-solid fa-note-sticky me-2"></i> Notes
+            </div>
+            <div class="card-body p-0 pb-2">
+                <p class="card-text p-3" id="notes">(empty)</p>
             </div>
         </div>
 
@@ -119,7 +224,7 @@
     <a href="#"
         class="btn btn-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center justify-content-center"
         id="edit-button" style="width: 56px; height: 56px;">
-        <i class="bi bi-pencil"></i>
+        <i class="fa-solid fa-pen-to-square"></i>
     </a>
 
 </body>

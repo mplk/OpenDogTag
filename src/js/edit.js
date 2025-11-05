@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { fields, decodeUrlParams, encodeUrlParams } from './common.js';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const baseUrl = 'http://localhost:8080/';
 
@@ -15,11 +16,23 @@ function updateConfigurationLink() {
     params.weight = $('#weight').val();
     params.character = $('#character').val();
     params.specialAttributes = $('#specialAttributes').val();
+    params.ownerName = $('#ownerName').val();
+    params.ownerPhone1 = $('#ownerPhone1').val();
+    params.ownerPhone2 = $('#ownerPhone2').val();
+    params.ownerEmail = $('#ownerEmail').val();
+    params.ownerAddress = $('#ownerAddress').val();
     params.chipId = $('#chipId').val();
     params.chipLocation = $('#chipLocation').val();
     params.tassoId = $('#tassoId').val();
     params.insuranceId = $('#insuranceId').val();
     params.taxId = $('#taxId').val();
+    params.allergies = $('#allergies').val();
+    params.diseases = $('#diseases').val();
+    params.medications = $('#medications').val();
+    params.vetName = $('#vetName').val();
+    params.vetPhone = $('#vetPhone').val();
+    params.vetAddress = $('#vetAddress').val();
+    params.notes = $('#notes').val();
 
     // Encode parameters and update output
     const encodedParams = encodeUrlParams(params);
@@ -46,7 +59,7 @@ $(function () {
     updateConfigurationLink();
 
     // Observe changes and update configuration link
-    $('input').on('change', function () {
+    $('input, textarea').on('change input', function () {
         updateConfigurationLink();
     });
 
