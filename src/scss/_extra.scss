@@ -32,7 +32,7 @@ html, body {
 #brand-text {
     font-size: 0.8rem;
     font-weight: 600;
-    padding: 0;;
+    padding: 0 0 0.2rem 0;
     color: var(--bs-brand-text);
 }
 
@@ -40,6 +40,12 @@ html, body {
     width: 60px;
     height: 44px;
 }
+
+[data-bs-theme=dark] #brand-logo {
+  filter: invert(1);
+}
+
+
 
 nav {
     background-color: var(--bs-navbar-bg);
