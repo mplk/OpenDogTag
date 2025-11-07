@@ -1,10 +1,6 @@
 {
   "navbar": {
-    "subtitle": "Open Source Emergency NFC Tag for Dogs",
-    "toggleTheme": "Toggle theme",
-    "editButton": "Edit",
-    "viewButton": "View",
-    "toggleEditMode": "Toggle edit mode"
+    "subtitle": "Open Source Emergency NFC Tag for Dogs"
   },
   "warnings": {
     "unsavedChanges": "Changes pending.",
@@ -15,13 +11,13 @@
     "edit": "Hi I'm"
   },
   "sections": {
-    "basicInfo": "Basic Information",
-    "ownerInfo": "Owner Information",
-    "owner2Info": "Secondary Owner Information",
-    "identificationInfo": "Identification & Registration",
-    "healthInfo": "Health Information",
-    "vetInfo": "Veterinarian Information",
-    "additionalNotes": "Additional Notes",
+    "basicInfo": "Info",
+    "ownerInfo": "Owner",
+    "owner2Info": "Secondary Owner",
+    "identificationInfo": "Registration",
+    "healthInfo": "Health",
+    "vetInfo": "Veterinarian",
+    "additionalNotes": "Notes",
     "configuration": "Configuration"
   },
   "fields": {
@@ -31,18 +27,18 @@
     "birthday": "Birthday",
     "age": "Age",
     "breed": "Breed",
-    "height": "Height (cm)",
-    "weight": "Weight (kg)",
+    "height": "Height",
+    "weight": "Weight",
     "character": "Character",
     "specialAttributes": "Special Attributes",
     "ownerName": "Name",
-    "ownerPhone1": "Phone 1",
-    "ownerPhone2": "Phone 2",
+    "ownerPhone1": "Primary phone number",
+    "ownerPhone2": "Secondary phone number",
     "ownerEmail": "Email",
     "ownerAddress": "Address",
     "owner2Name": "Name",
-    "owner2Phone1": "Phone 1",
-    "owner2Phone2": "Phone 2",
+    "owner2Phone1": "Primary phone number",
+    "owner2Phone2": "Secondary phone number",
     "owner2Email": "Email",
     "owner2Address": "Address",
     "chipId": "Chip ID",
@@ -65,21 +61,20 @@
     "noShow": "Leave empty",
     "yes": "Yes",
     "no": "No",
-    "unknown": "Unknown",
-    "empty": "(empty)"
+    "unknown": "Unknown"
   },
   "age": {
     "years": "years",
     "months": "months"
   },
   "placeholders": {
-    "name": "Enter dog's name",
+    "name": "Name of the dog",
     "breed": "e.g., Golden Retriever",
     "height": "Height in cm",
     "weight": "Weight in kg",
     "character": "e.g., Friendly, energetic",
     "specialAttributes": "e.g., Blue collar, white spot on chest",
-    "ownerName": "Firstname Lastname",
+    "ownerName": "Name",
     "ownerPhone1": "Primary phone number",
     "ownerPhone2": "Alternative phone number",
     "ownerEmail": "your.email@example.com",
@@ -96,19 +91,21 @@
     "vetPhone": "Clinic phone number",
     "vetEmail": "clinic@example.com",
     "vetAddress": "Clinic address",
-    "notes": "Any additional important information"
+    "notes": "Additional information"
   },
   "buttons": {
-    "preview": "Preview"
+    "preview": "Preview",
+    "toggleTheme": "Toggle theme",
+    "toggleEditMode": "Toggle edit mode"
   },
   "messages": {
     "configCopied": "Configuration copied to clipboard",
     "manualCopy": "Please copy the configuration manually.",
     "popupBlocked": "Popup was blocked. Please allow popups for this page.",
-    "languageChangeFailed": "Language change failed. Please try again."
+    "languageChangeFailed": "Language change failed."
   },
   "labels": {
-    "configurationSize": "Configuration size:"
+    "configurationSize": "Size of configuration URL:"
   },
   "validation": {
     "height": "Please enter a valid height between 0 and 200 cm.",

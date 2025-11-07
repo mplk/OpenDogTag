@@ -1,10 +1,6 @@
 {
   "navbar": {
-    "subtitle": "Open Source Notfall-NFC-Tag für Hunde",
-    "toggleTheme": "Design wechseln",
-    "editButton": "Bearbeiten",
-    "viewButton": "Ansehen",
-    "toggleEditMode": "Bearbeitungsmodus wechseln"
+    "subtitle": "Open Source Notfall-NFC-Tag für Hunde"
   },
   "warnings": {
     "unsavedChanges": "Änderungen ausstehend.",
@@ -15,13 +11,13 @@
     "edit": "Hallo, ich bin"
   },
   "sections": {
-    "basicInfo": "Grundinformationen",
-    "ownerInfo": "Besitzerinformationen",
+    "basicInfo": "Info",
+    "ownerInfo": "Besitzer",
     "owner2Info": "Zweiter Besitzer",
-    "identificationInfo": "Identifikation & Registrierung",
-    "healthInfo": "Gesundheitsinformationen",
-    "vetInfo": "Tierarztinformationen",
-    "additionalNotes": "Zusätzliche Notizen",
+    "identificationInfo": "Registrierung",
+    "healthInfo": "Gesundheit",
+    "vetInfo": "Tierarzt",
+    "additionalNotes": "Notizen",
     "configuration": "Konfiguration"
   },
   "fields": {
@@ -31,22 +27,22 @@
     "birthday": "Geburtstag",
     "age": "Alter",
     "breed": "Rasse",
-    "height": "Größe (cm)",
-    "weight": "Gewicht (kg)",
+    "height": "Größe",
+    "weight": "Gewicht",
     "character": "Charakter",
     "specialAttributes": "Besondere Merkmale",
     "ownerName": "Name",
-    "ownerPhone1": "Telefon 1",
-    "ownerPhone2": "Telefon 2",
+    "ownerPhone1": "Haupttelefonnummer",
+    "ownerPhone2": "Alternative Telefonnummer",
     "ownerEmail": "E-Mail",
     "ownerAddress": "Adresse",
     "owner2Name": "Name",
-    "owner2Phone1": "Telefon 1",
-    "owner2Phone2": "Telefon 2",
+    "owner2Phone1": "Haupttelefonnummer",
+    "owner2Phone2": "Alternative Telefonnummer",
     "owner2Email": "E-Mail",
     "owner2Address": "Adresse",
     "chipId": "Chip-ID",
-    "chipLocation": "Chip-Position",
+    "chipLocation": "Position des Chips",
     "tassoId": "TASSO-ID",
     "insuranceId": "Versicherungs-ID",
     "taxId": "Steuer-ID",
@@ -65,8 +61,7 @@
     "noShow": "Leer lassen",
     "yes": "Ja",
     "no": "Nein",
-    "unknown": "Unbekannt",
-    "empty": "(leer)"
+    "unknown": "Unbekannt"
   },
   "age": {
     "years": "Jahre",
@@ -79,7 +74,7 @@
     "weight": "Gewicht in kg",
     "character": "z.B. Freundlich, energisch",
     "specialAttributes": "z.B. Blaues Halsband, weißer Fleck auf der Brust",
-    "ownerName": "Vorname Nachname",
+    "ownerName": "Name",
     "ownerPhone1": "Haupttelefonnummer",
     "ownerPhone2": "Alternative Telefonnummer",
     "ownerEmail": "ihre.email@beispiel.de",
@@ -93,22 +88,24 @@
     "diseases": "Medizinische Bedingungen",
     "medications": "Aktuelle Medikamente",
     "vetName": "Name des Tierarztes",
-    "vetPhone": "Telefonnummer der Klinik",
-    "vetEmail": "klinik@beispiel.de",
-    "vetAddress": "Adresse der Klinik",
-    "notes": "Weitere wichtige Informationen"
+    "vetPhone": "Telefonnummer des Tierarztes",
+    "vetEmail": "tierarzt@beispiel.de",
+    "vetAddress": "Adresse des Tierarztes",
+    "notes": "Weitere Informationen"
   },
   "buttons": {
-    "preview": "Vorschau"
+    "preview": "Vorschau",
+    "toggleTheme": "Design wechseln",
+    "toggleEditMode": "Bearbeitungsmodus wechseln"
   },
   "messages": {
     "configCopied": "Konfiguration in Zwischenablage kopiert",
     "manualCopy": "Bitte kopieren Sie die Konfiguration manuell.",
     "popupBlocked": "Popup wurde blockiert. Bitte erlauben Sie Popups für diese Seite.",
-    "languageChangeFailed": "Sprachwechsel fehlgeschlagen. Bitte versuchen Sie es erneut."
+    "languageChangeFailed": "Sprachwechsel fehlgeschlagen."
   },
   "labels": {
-    "configurationSize": "Konfigurationsgröße:"
+    "configurationSize": "Größe der Konfigurations-URL:"
   },
   "validation": {
     "height": "Bitte geben Sie eine gültige Höhe zwischen 0 und 200 cm ein.",
