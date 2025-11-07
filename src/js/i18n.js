@@ -1,6 +1,8 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+import $ from 'jquery';
+
 import enTranslation from '../locales/en.json';
 import deTranslation from '../locales/de.json';
 
@@ -37,40 +39,38 @@ export { i18nextPromise };
 // Function to update all translations in the DOM
 export function updateContent() {
     // Update elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        element.textContent = i18next.t(key);
+    $('[data-i18n]').each(function() {
+        const key = $(this).attr('data-i18n');
+        $(this).text(i18next.t(key));
     });
 
     // Update elements with data-i18n-html attribute (for HTML content)
-    document.querySelectorAll('[data-i18n-html]').forEach(element => {
-        const key = element.getAttribute('data-i18n-html');
-        element.innerHTML = i18next.t(key);
+    $('[data-i18n-html]').each(function() {
+        const key = $(this).attr('data-i18n-html');
+        $(this).html(i18next.t(key));
     });
 
     // Update placeholders
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-        const key = element.getAttribute('data-i18n-placeholder');
-        element.placeholder = i18next.t(key);
+    $('[data-i18n-placeholder]').each(function() {
+        const key = $(this).attr('data-i18n-placeholder');
+        $(this).attr('placeholder', i18next.t(key));
     });
 
     // Update title attributes
-    document.querySelectorAll('[data-i18n-title]').forEach(element => {
-        const key = element.getAttribute('data-i18n-title');
-        element.title = i18next.t(key);
+    $('[data-i18n-title]').each(function() {
+        const key = $(this).attr('data-i18n-title');
+        $(this).attr('title', i18next.t(key));
     });
 }
 
 // Function to change language
 export function changeLanguage(lng) {
-    i18next.changeLanguage(lng, (err) => {
-        if (err) {
-            console.error('Error changing language:', err);
-            return;
-        }
-        updateContent();
+    return i18next.changeLanguage(lng).then(() => {
         // Update html lang attribute
         document.documentElement.lang = lng;
+    }).catch((err) => {
+        console.error('Error changing language:', err);
+        throw err;
     });
 }
 

@@ -24,8 +24,12 @@ footer {
 
 .icon-button {
     color: var(--bs-brand-text);
+    transition: opacity 0.2s;
+    
+    &:hover {
+        opacity: 0.8;
+    }
 }
-
 
 #main-content-container {
     max-width: 42rem;
@@ -56,13 +60,13 @@ footer {
 #brand-logo {
     width: 60px;
     height: 44px;
-    // Values calculated for --bs-brand-text with https://codepen.io/sosuke/pen/Pjoqqp
+    // Values calculated for --bs-brand-text (#19191A) with https://codepen.io/sosuke/pen/Pjoqqp
     filter: invert(5%) sepia(0%) saturate(2418%) hue-rotate(296deg) brightness(94%) contrast(89%);
     
 }
 
 [data-bs-theme=dark] #brand-logo {
-    // Values calculated for --bs-brand-text with https://codepen.io/sosuke/pen/Pjoqqp
+    // Values calculated for --bs-brand-text (#DEE2E6) with https://codepen.io/sosuke/pen/Pjoqqp
     filter: invert(99%) sepia(1%) saturate(2871%) hue-rotate(177deg) brightness(97%) contrast(85%);
 }
 

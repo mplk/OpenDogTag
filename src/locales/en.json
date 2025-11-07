@@ -8,8 +8,8 @@
     "toggleEditMode": "Toggle edit mode"
   },
   "warnings": {
-    "unsavedChanges": "You have unsaved changes.",
-    "unsavedChangesHint": "Please save your changes before leaving this page."
+    "unsavedChanges": "Changes pending.",
+    "unsavedChangesHint": "Copy the configuration URL below to your NFC tag to save your changes permanently."
   },
   "greeting": {
     "view": "Hi I'm {{name}}!",
@@ -63,7 +63,7 @@
   "values": {
     "female": "Female",
     "male": "Male",
-    "noShow": "Don't show",
+    "noShow": "Leave empty",
     "yes": "Yes",
     "no": "No",
     "unknown": "Unknown",
@@ -103,6 +103,9 @@
     "preview": "Preview"
   },
   "messages": {
-    "configCopied": "Configuration copied to clipboard"
+    "configCopied": "Configuration copied to clipboard",
+    "manualCopy": "Please copy the configuration manually.",
+    "popupBlocked": "Popup was blocked. Please allow popups for this page.",
+    "languageChangeFailed": "Language change failed. Please try again."
   }
 }

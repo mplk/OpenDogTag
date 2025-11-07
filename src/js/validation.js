@@ -10,18 +10,12 @@ function validatePhone(phone) {
     if (!phone) return true; // Allow empty values
     // Allow digits, spaces, +, -, (, )
     const phoneRegex = /^[\d\s\+\-\(\)]+$/;
-    // Must have at least 6 digits
+    // Must have at least 3 digits
     const digitCount = (phone.match(/\d/g) || []).length;
-    return phoneRegex.test(phone) && digitCount >= 6;
+    return phoneRegex.test(phone) && digitCount >= 3;
 }
 
-function validateNumber(value, min, max) {
-    if (!value || value === '') return true; // Allow empty values
-    const num = parseFloat(value);
-    // Check if it's a valid number and within range
-    if (isNaN(num)) return false;
-    return num >= min && num <= max;
-}
+// Removed unused validateNumber function
 
 export function validateInput(input) {
     const $input = $(input);
@@ -34,14 +28,6 @@ export function validateInput(input) {
         // Check if the browser considers it valid (handles text input automatically)
         if (input.validity && !input.validity.valid) {
             isValid = false;
-        } else if (value) {
-            // Additionally validate the range
-            const num = parseFloat(value);
-            if (id === 'height-input') {
-                isValid = !isNaN(num) && num >= 0 && num <= 200;
-            } else if (id === 'weight-input') {
-                isValid = !isNaN(num) && num >= 0 && num <= 150;
-            }
         } else {
             // Empty is valid (optional field)
             $input.removeClass('is-invalid is-valid');

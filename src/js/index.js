@@ -10,6 +10,20 @@ import i18next, { i18nextPromise, updateContent, changeLanguage, translate } fro
 
 const delimiter = '~';
 const newLinePlaceholder = '°';
+
+const SEX = {
+    EMPTY: '',
+    FEMALE: '0',
+    MALE: '1'
+};
+
+const NEUTERED = {
+    EMPTY: '',
+    YES: '1',
+    NO: '0',
+    UNKNOWN: '?'
+};
+
 const baseUrl = `${window.location.origin}${window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'))}`;
 
 let currentMode = 'view';
@@ -51,14 +65,27 @@ let tagData = {
 };
 
 function decodeTagData(dataParameter) {
-    const decodedParameters = LZString.decompressFromEncodedURIComponent(dataParameter);
-    const dataArr = decodedParameters ? decodedParameters.split(delimiter) : [];
+    try {
+        const decodedParameters = LZString.decompressFromEncodedURIComponent(dataParameter);
+        if (!decodedParameters) return tagData; // Return empty data if nothing to decode
 
-    Object.keys(tagData).forEach((field, index) => {
-        tagData[field] = dataArr[index] || null;
-    });
+        const dataArr = decodedParameters.split(delimiter);
 
-    return tagData;
+        // Validate array length matches expected fields
+        if (dataArr.length > Object.keys(tagData).length) {
+            console.warn('Unexpected data format');
+        }
+
+        Object.keys(tagData).forEach((field, index) => {
+            tagData[field] = dataArr[index] || null;
+        });
+
+        return tagData;
+
+    } catch (error) {
+        console.error('Error decoding tag data: ', error);
+        return tagData; // Return empty data on error
+    }
 }
 
 function encodeTagData(params) {
@@ -139,15 +166,15 @@ function populateOutputFields() {
                     $(`#${field}-output`).text(tagData[field]);
                     break;
                 case 'sex':
-                    if (tagData[field] === '') $('#sex-noShow-input').text();
-                    if (tagData[field] === '0') $(`#${field}-output`).text(translate('values.female'))
-                    if (tagData[field] === '1') $(`#${field}-output`).text(translate('values.male'))
+                    if (tagData[field] === SEX.EMPTY) $(`#${field}-output`).text('');
+                    if (tagData[field] === SEX.FEMALE) $(`#${field}-output`).text(translate('values.female'));
+                    if (tagData[field] === SEX.MALE) $(`#${field}-output`).text(translate('values.male'));
                     break;
                 case 'neutered':
-                    if (tagData[field] === '') $(`#${field}-output`).text();
-                    if (tagData[field] === '1') $(`#${field}-output`).text(translate('values.yes'));
-                    if (tagData[field] === '0') $(`#${field}-output`).text(translate('values.no'));
-                    if (tagData[field] === '?') $(`#${field}-output`).text(translate('values.unknown'));
+                    if (tagData[field] === NEUTERED.EMPTY) $(`#${field}-output`).text('');
+                    if (tagData[field] === NEUTERED.YES) $(`#${field}-output`).text(translate('values.yes'));
+                    if (tagData[field] === NEUTERED.NO) $(`#${field}-output`).text(translate('values.no'));
+                    if (tagData[field] === NEUTERED.UNKNOWN) $(`#${field}-output`).text(translate('values.unknown'));
                     break;
                 case 'birthday':
                     const date = tagData[field];
@@ -184,15 +211,15 @@ function populateInputFields() {
         if (tagData[field]) {
             switch (field) {
                 case 'sex':
-                    if (tagData[field] === '') $('#sex-noShow-input').prop('checked', true);
-                    if (tagData[field] === '0') $('#sex-female-input').prop('checked', true);
-                    if (tagData[field] === '1') $('#sex-male-input').prop('checked', true);
+                    if (tagData[field] === SEX.EMPTY) $('#sex-noShow-input').prop('checked', true);
+                    if (tagData[field] === SEX.FEMALE) $('#sex-female-input').prop('checked', true);
+                    if (tagData[field] === SEX.MALE) $('#sex-male-input').prop('checked', true);
                     break;
                 case 'neutered':
-                    if (tagData[field] === '') $('#neutered-noShow-input').prop('checked', true);
-                    if (tagData[field] === '1') $('#neutered-yes-input').prop('checked', true);
-                    if (tagData[field] === '0') $('#neutered-no-input').prop('checked', true);
-                    if (tagData[field] === '?') $('#neutered-unknown-input').prop('checked', true);
+                    if (tagData[field] === NEUTERED.EMPTY) $('#neutered-noShow-input').prop('checked', true);
+                    if (tagData[field] === NEUTERED.YES) $('#neutered-yes-input').prop('checked', true);
+                    if (tagData[field] === NEUTERED.NO) $('#neutered-no-input').prop('checked', true);
+                    if (tagData[field] === NEUTERED.UNKNOWN) $('#neutered-unknown-input').prop('checked', true);
                     break;
                 case 'ownerAddress':
                 case 'owner2Address':
@@ -214,15 +241,15 @@ function updateConfiguration() {
     Object.keys(tagData).forEach(field => {
         switch (field) {
             case 'sex':
-                if ($('#sex-noShow-input').is(':checked')) params[field] = '';
-                if ($('#sex-female-input').is(':checked')) params[field] = '0';
-                if ($('#sex-male-input').is(':checked')) params[field] = '1';
+                if ($('#sex-noShow-input').is(':checked')) params[field] = SEX.EMPTY;
+                if ($('#sex-female-input').is(':checked')) params[field] = SEX.FEMALE;
+                if ($('#sex-male-input').is(':checked')) params[field] = SEX.MALE;
                 break;
             case 'neutered':
-                if ($('#neutered-noShow-input').is(':checked')) params[field] = '';
-                if ($('#neutered-yes-input').is(':checked')) params[field] = '1';
-                if ($('#neutered-no-input').is(':checked')) params[field] = '0';
-                if ($('#neutered-unknown-input').is(':checked')) params[field] = '?';
+                if ($('#neutered-noShow-input').is(':checked')) params[field] = NEUTERED.EMPTY;
+                if ($('#neutered-yes-input').is(':checked')) params[field] = NEUTERED.YES;
+                if ($('#neutered-no-input').is(':checked')) params[field] = NEUTERED.NO;
+                if ($('#neutered-unknown-input').is(':checked')) params[field] = NEUTERED.UNKNOWN;
                 break;
             case 'ownerAddress':
             case 'owner2Address':
@@ -240,10 +267,9 @@ function updateConfiguration() {
     // Encode parameters and update output
     const encodedParams = encodeTagData(params);
     const configUrl = `${baseUrl}?${encodedParams}`;
-    $('#config-output').val(configUrl);
-
-    // Update byte counter
     const byteCount = configUrl.length;
+
+    $('#config-output').val(configUrl);
     $('#byte-counter').text(`${byteCount} bytes`);
 }
 
@@ -268,13 +294,12 @@ $(function () {
 
     // Wait for i18next to initialize before populating fields
     i18nextPromise.then(() => {
-        // Update static content first
-        updateContent();
-        
-        // Then populate fields with data (uses translate() for dynamic values)
-        populateOutputFields();
-        populateInputFields();
-        
+        // Update all content (static translations, outputs, and inputs)
+        updateContent(); // Update static i18n content
+
+        populateOutputFields(); // Update dynamic output/display fields
+        populateInputFields(); // Update input fields
+
         // Set language selector to current language (handle cases like 'en-US' -> 'en')
         const currentLang = i18next.language.split('-')[0];
         $('#language-selector').val(currentLang);
@@ -294,7 +319,7 @@ $(function () {
     // Get preferred color scheme
     currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     setTheme(currentTheme);
-    
+
     // Toggle theme on button click
     $('#theme-toggle-button').on('click', function () {
         currentTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -304,15 +329,21 @@ $(function () {
     // Language switcher
     $('#language-selector').on('change', function () {
         const selectedLang = $(this).val();
-        changeLanguage(selectedLang);
-        populateOutputFields(); // Re-populate to update translated values
+        changeLanguage(selectedLang).then(() => {
+            // Re-populate all content after language change
+            updateContent(); // Update static i18n content
+            populateOutputFields(); // Update dynamic output/display fields
+        }).catch((error) => {
+            console.error('Error changing language:', error);
+            alert(translate('messages.languageChangeFailed'));
+        });
     });
 
     // Initial configuration link update
     updateConfiguration();
 
     // Observe changes and update configuration link
-    $('input, textarea').on('change input', function () {
+    $('#main-content-container').on('change input', 'input, textarea', function () {
         $('#unsaved-changes-warning').show(); // Show unsaved changes warning
         updateConfiguration();
     });
@@ -341,12 +372,16 @@ $(function () {
             });
         } catch (err) {
             console.error('Clipboard API not available: ', err);
+            alert(translate('messages.manualCopy'));
         }
     });
 
     // Preview button opens new window with current configuration
     $('#preview-button').on('click', function () {
         const previewUrl = $('#config-output').val();
-        window.open(previewUrl, '_blank');
+        const newWindow = window.open(previewUrl, '_blank');
+        if (!newWindow) {
+            alert(translate('messages.popupBlocked'));
+        }
     });
 });

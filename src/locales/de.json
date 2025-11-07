@@ -8,8 +8,8 @@
     "toggleEditMode": "Bearbeitungsmodus wechseln"
   },
   "warnings": {
-    "unsavedChanges": "Sie haben nicht gespeicherte Änderungen.",
-    "unsavedChangesHint": "Bitte speichern Sie Ihre Änderungen, bevor Sie diese Seite verlassen."
+    "unsavedChanges": "Änderungen ausstehend.",
+    "unsavedChangesHint": "Kopieren Sie die Konfigurations-URL unten auf Ihr NFC-Tag, um Ihre Änderungen dauerhaft zu speichern."
   },
   "greeting": {
     "view": "Hallo, ich bin {{name}}!",
@@ -63,7 +63,7 @@
   "values": {
     "female": "Weiblich",
     "male": "Männlich",
-    "noShow": "Nicht anzeigen",
+    "noShow": "Leer lassen",
     "yes": "Ja",
     "no": "Nein",
     "unknown": "Unbekannt",
@@ -103,6 +103,9 @@
     "preview": "Vorschau"
   },
   "messages": {
-    "configCopied": "Konfiguration in Zwischenablage kopiert"
+    "configCopied": "Konfiguration in Zwischenablage kopiert",
+    "manualCopy": "Bitte kopieren Sie die Konfiguration manuell.",
+    "popupBlocked": "Popup wurde blockiert. Bitte erlauben Sie Popups für diese Seite.",
+    "languageChangeFailed": "Sprachwechsel fehlgeschlagen. Bitte versuchen Sie es erneut."
   }
 }

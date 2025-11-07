@@ -27,10 +27,10 @@
                     <option value="en">EN</option>
                     <option value="de">DE</option>
                 </select>
-                <button class="btn btn-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme" title="Toggle theme">
+                <button class="btn btn-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme" title="Toggle theme" aria-label="Toggle theme">
                     <i class="fa-solid fa-moon" id="theme-icon"></i>
                 </button>
-                <button class="btn btn-secondary" id="edit-navbar-button" data-i18n-title="navbar.toggleEditMode" title="Toggle edit mode">
+                <button class="btn btn-secondary" id="edit-navbar-button" data-i18n-title="navbar.toggleEditMode" title="Toggle edit mode" aria-label="Toggle edit mode">
                     <div class="view-mode">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </div>
@@ -43,11 +43,12 @@
     </nav>
 
     <!-- Warning Message -->
+    <!-- TODO: visible all the time -->
     <div class="alert alert-warning m-3 d-flex align-items-center" id="unsaved-changes-warning" role="alert">
         <i class="fa-solid fa-triangle-exclamation me-2"></i>
         <div>
-            <strong data-i18n="warnings.unsavedChanges">You have unsaved changes.</strong>
-            <span data-i18n="warnings.unsavedChangesHint">Please save your changes before leaving this page.</span>
+            <strong data-i18n="warnings.unsavedChanges">Changes pending.</strong>
+            <span data-i18n="warnings.unsavedChangesHint">Copy the configuration URL below to your NFC tag to save your changes permanently.</span>
         </div>
     </div>
 
@@ -92,7 +93,7 @@
                                     <div class="edit-mode">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="sex-input" id="sex-noShow-input" checked>
-                                            <label class="form-check-label" for="sex-noShow-input" data-i18n="values.noShow">Don't show</label>
+                                            <label class="form-check-label" for="sex-noShow-input" data-i18n="values.noShow">Leave empty</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="sex-input" id="sex-female-input">
@@ -114,7 +115,7 @@
                                     <div class="edit-mode">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="neutered-input" id="neutered-noShow-input" checked>
-                                            <label class="form-check-label" for="neutered-noShow-input" data-i18n="values.noShow">Don't show</label>
+                                            <label class="form-check-label" for="neutered-noShow-input" data-i18n="values.noShow">Leave empty</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="neutered-input" id="neutered-yes-input">
@@ -163,7 +164,7 @@
                                         <div class="input-group has-validation">
                                             <input type="number" class="form-control" id="height-input" data-i18n-placeholder="placeholders.height" placeholder="Height of your dog" min="0" max="200" step="0.1">
                                             <span class="input-group-text unit-label">cm</span>
-                                            <div class="invalid-feedback">Please enter a valid height (0-200 cm)</div>
+                                            <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid height (0-200 cm)</div>
                                         </div>
                                     </div>
                                 </td>
@@ -176,9 +177,9 @@
                                     </div>
                                     <div class="edit-mode">
                                         <div class="input-group has-validation">
-                                            <input type="number" class="form-control" id="weight-input" data-i18n-placeholder="placeholders.weight" placeholder="Weight of your dog" min="0" max="150" step="0.1">
+                                            <input type="number" class="form-control" id="weight-input" data-i18n-placeholder="placeholders.weight" placeholder="Weight of your dog" min="0" max="150" step="1">
                                             <span class="input-group-text unit-label">kg</span>
-                                            <div class="invalid-feedback">Please enter a valid weight (0-150 kg)</div>
+                                            <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid weight (0-150 kg)</div>
                                         </div>
                                     </div>
                                 </td>
@@ -242,7 +243,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="ownerPhone1-input" data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
-                                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
@@ -254,7 +255,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="ownerPhone2-input" data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
-                                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
@@ -266,7 +267,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="email" class="form-control" id="ownerEmail-input" data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
-                                        <div class="invalid-feedback">Please enter a valid email address</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid email address</div>
                                     </div>
                                 </td>
                             </tr>
@@ -274,7 +275,7 @@
                                 <td class="px-3" data-i18n="fields.ownerAddress">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
-                                        <p id="ownerAddress-output">(empty)</p>
+                                        <p id="ownerAddress-output" class="mb-0">(empty)</p>
                                     </div>
                                     <div class="edit-mode">
                                         <textarea class="form-control" id="ownerAddress-input" rows="4" data-i18n-placeholder="placeholders.ownerAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
@@ -317,7 +318,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="owner2Phone1-input" data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
-                                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
@@ -329,7 +330,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="owner2Phone2-input" data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
-                                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
@@ -341,7 +342,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="email" class="form-control" id="owner2Email-input" data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
-                                        <div class="invalid-feedback">Please enter a valid email address</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid email address</div>
                                     </div>
                                 </td>
                             </tr>
@@ -349,7 +350,7 @@
                                 <td class="px-3" data-i18n="fields.owner2Address">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
-                                        <span id="owner2Address-output">(empty)</span>
+                                        <p id="owner2Address-output" class="mb-0">(empty)</p>
                                     </div>
                                     <div class="edit-mode">
                                         <textarea class="form-control" id="owner2Address-input" rows="4" data-i18n-placeholder="placeholders.ownerAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
@@ -514,7 +515,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="tel" class="form-control" id="vetPhone-input" data-i18n-placeholder="placeholders.vetPhone" placeholder="Phone" pattern="[\d\s\+\-\(\)]+">
-                                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid phone number</div>
                                     </div>
                                 </td>
                             </tr>
@@ -526,7 +527,7 @@
                                     </div>
                                     <div class="edit-mode">
                                         <input type="email" class="form-control" id="vetEmail-input" data-i18n-placeholder="placeholders.vetEmail" placeholder="Email">
-                                        <div class="invalid-feedback">Please enter a valid email address</div>
+                                        <div class="invalid-feedback" role="alert" aria-live="polite">Please enter a valid email address</div>
                                     </div>
                                 </td>
                             </tr>
@@ -534,7 +535,7 @@
                                 <td class="px-3" data-i18n="fields.vetAddress">Address</td>
                                 <td class="px-3">
                                     <div class="view-mode">
-                                        <span id="vetAddress-output">(empty)</span>
+                                        <p id="vetAddress-output" class="mb-0">(empty)</p>
                                     </div>
                                     <div class="edit-mode">
                                         <textarea class="form-control" id="vetAddress-input" rows="4" data-i18n-placeholder="placeholders.vetAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
@@ -589,6 +590,7 @@
             </a>
             <!-- TODO: Add Buy Me a Coffee link -->
             <!-- TODO: Add Link to Documentation -->
+            <!-- TODO: Add Privacy Policy link -->
         </div>
     </footer>
 </body>
