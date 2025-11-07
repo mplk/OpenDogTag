@@ -1,13 +1,11 @@
 import { resolve } from 'path'
 
 export default {
+    base: '/OpenDogTag/',
     root: resolve(__dirname, 'src'),
     publicDir: resolve(__dirname, 'public'),
     build: {
         outDir: '../dist'
-    },
-    server: {
-        host: true
     },
     // Optional: Silence Sass deprecation warnings. See note below.
     css: {
