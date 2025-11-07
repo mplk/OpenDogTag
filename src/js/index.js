@@ -134,17 +134,20 @@ function populateOutputFields() {
     Object.keys(tagData).forEach(field => {
         if (tagData[field]) {
             switch (field) {
-                // TODO: improve formatting for address fields
                 case 'name':
-                    // Update the greeting with the dog's name
                     $('#greeting-view').text(translate('greeting.view', { name: tagData[field] }));
                     $(`#${field}-output`).text(tagData[field]);
                     break;
                 case 'sex':
-                    tagData[field] === '0' ? $(`#${field}-output`).text(translate('values.female')) : $(`#${field}-output`).text(translate('values.male'));
+                    if (tagData[field] === '') $('#sex-noShow-input').text();
+                    if (tagData[field] === '0') $(`#${field}-output`).text(translate('values.female'))
+                    if (tagData[field] === '1') $(`#${field}-output`).text(translate('values.male'))
                     break;
                 case 'neutered':
-                    tagData[field] === '1' ? $(`#${field}-output`).text(translate('values.yes')) : $(`#${field}-output`).text(translate('values.no'));
+                    if (tagData[field] === '') $(`#${field}-output`).text();
+                    if (tagData[field] === '1') $(`#${field}-output`).text(translate('values.yes'));
+                    if (tagData[field] === '0') $(`#${field}-output`).text(translate('values.no'));
+                    if (tagData[field] === '?') $(`#${field}-output`).text(translate('values.unknown'));
                     break;
                 case 'birthday':
                     const date = tagData[field];
@@ -181,18 +184,15 @@ function populateInputFields() {
         if (tagData[field]) {
             switch (field) {
                 case 'sex':
-                    if (tagData[field] === '0') {
-                        $('#sex-female-input').prop('checked', true);
-                    } else {
-                        $('#sex-male-input').prop('checked', true);
-                    }
+                    if (tagData[field] === '') $('#sex-noShow-input').prop('checked', true);
+                    if (tagData[field] === '0') $('#sex-female-input').prop('checked', true);
+                    if (tagData[field] === '1') $('#sex-male-input').prop('checked', true);
                     break;
                 case 'neutered':
-                    if (tagData[field] === '1') {
-                        $('#neutered-input').prop('checked', true);
-                    } else {
-                        $('#neutered-input').prop('checked', false);
-                    }
+                    if (tagData[field] === '') $('#neutered-noShow-input').prop('checked', true);
+                    if (tagData[field] === '1') $('#neutered-yes-input').prop('checked', true);
+                    if (tagData[field] === '0') $('#neutered-no-input').prop('checked', true);
+                    if (tagData[field] === '?') $('#neutered-unknown-input').prop('checked', true);
                     break;
                 case 'ownerAddress':
                 case 'owner2Address':
@@ -214,10 +214,15 @@ function updateConfiguration() {
     Object.keys(tagData).forEach(field => {
         switch (field) {
             case 'sex':
-                params[field] = $('#sex-female-input').is(':checked') ? '0' : '1';
+                if ($('#sex-noShow-input').is(':checked')) params[field] = '';
+                if ($('#sex-female-input').is(':checked')) params[field] = '0';
+                if ($('#sex-male-input').is(':checked')) params[field] = '1';
                 break;
             case 'neutered':
-                params[field] = $('#neutered-input').is(':checked') ? '1' : '0';
+                if ($('#neutered-noShow-input').is(':checked')) params[field] = '';
+                if ($('#neutered-yes-input').is(':checked')) params[field] = '1';
+                if ($('#neutered-no-input').is(':checked')) params[field] = '0';
+                if ($('#neutered-unknown-input').is(':checked')) params[field] = '?';
                 break;
             case 'ownerAddress':
             case 'owner2Address':
@@ -230,6 +235,7 @@ function updateConfiguration() {
                 params[field] = $(`#${field}-input`).val();
         }
     });
+    console.log('Current parameters: ', params);
 
     // Encode parameters and update output
     const encodedParams = encodeTagData(params);

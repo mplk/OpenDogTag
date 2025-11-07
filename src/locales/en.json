@@ -4,7 +4,8 @@
     "subtitle": "Open Source Emergency NFC Tag for Dogs",
     "toggleTheme": "Toggle theme",
     "editButton": "Edit",
-    "viewButton": "View"
+    "viewButton": "View",
+    "toggleEditMode": "Toggle edit mode"
   },
   "warnings": {
     "unsavedChanges": "You have unsaved changes. Please save your changes before leaving this page."
@@ -61,6 +62,7 @@
   "values": {
     "female": "Female",
     "male": "Male",
+    "noShow": "Don't show",
     "yes": "Yes",
     "no": "No",
     "unknown": "Unknown",
@@ -97,11 +99,9 @@
     "notes": "Any additional important information"
   },
   "buttons": {
-    "preview": "Preview",
-    "copy": "Copy"
+    "preview": "Preview"
   },
   "messages": {
-    "configCopied": "Configuration copied to clipboard",
-    "configUrlLabel": "Configuration URL"
+    "configCopied": "Configuration copied to clipboard"
   }
 }

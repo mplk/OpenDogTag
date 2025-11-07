@@ -39,13 +39,16 @@ html, body {
 #brand-logo {
     width: 60px;
     height: 44px;
+    // Values calculated for --bs-brand-text with https://codepen.io/sosuke/pen/Pjoqqp
+    filter: invert(5%) sepia(0%) saturate(2418%) hue-rotate(296deg) brightness(94%) contrast(89%);
+    
 }
 
+// TODO: Set colors for dark mode
 [data-bs-theme=dark] #brand-logo {
-  filter: invert(1);
+    // Values calculated for --bs-brand-text with https://codepen.io/sosuke/pen/Pjoqqp
+    filter: invert(99%) sepia(1%) saturate(2871%) hue-rotate(177deg) brightness(97%) contrast(85%);
 }
-
-
 
 nav {
     background-color: var(--bs-navbar-bg);

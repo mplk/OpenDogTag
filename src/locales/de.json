@@ -4,7 +4,8 @@
     "subtitle": "Open Source Notfall-NFC-Tag für Hunde",
     "toggleTheme": "Design wechseln",
     "editButton": "Bearbeiten",
-    "viewButton": "Ansehen"
+    "viewButton": "Ansehen",
+    "toggleEditMode": "Bearbeitungsmodus wechseln"
   },
   "warnings": {
     "unsavedChanges": "Sie haben nicht gespeicherte Änderungen. Bitte speichern Sie Ihre Änderungen, bevor Sie diese Seite verlassen."
@@ -61,6 +62,7 @@
   "values": {
     "female": "Weiblich",
     "male": "Männlich",
+    "noShow": "Nicht anzeigen",
     "yes": "Ja",
     "no": "Nein",
     "unknown": "Unbekannt",
@@ -97,11 +99,9 @@
     "notes": "Weitere wichtige Informationen"
   },
   "buttons": {
-    "preview": "Vorschau",
-    "copy": "Kopieren"
+    "preview": "Vorschau"
   },
   "messages": {
-    "configCopied": "Konfiguration in Zwischenablage kopiert",
-    "configUrlLabel": "Konfigurations-URL"
+    "configCopied": "Konfiguration in Zwischenablage kopiert"
   }
 }
