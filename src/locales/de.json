@@ -8,7 +8,8 @@
     "toggleEditMode": "Bearbeitungsmodus wechseln"
   },
   "warnings": {
-    "unsavedChanges": "Sie haben nicht gespeicherte Änderungen. Bitte speichern Sie Ihre Änderungen, bevor Sie diese Seite verlassen."
+    "unsavedChanges": "Sie haben nicht gespeicherte Änderungen.",
+    "unsavedChangesHint": "Bitte speichern Sie Ihre Änderungen, bevor Sie diese Seite verlassen."
   },
   "greeting": {
     "view": "Hallo, ich bin {{name}}!",

@@ -8,7 +8,8 @@
     "toggleEditMode": "Toggle edit mode"
   },
   "warnings": {
-    "unsavedChanges": "You have unsaved changes. Please save your changes before leaving this page."
+    "unsavedChanges": "You have unsaved changes.",
+    "unsavedChangesHint": "Please save your changes before leaving this page."
   },
   "greeting": {
     "view": "Hi I'm {{name}}!",

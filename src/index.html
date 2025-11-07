@@ -43,14 +43,18 @@
     </nav>
 
     <!-- Warning Message -->
-    <div class="alert alert-warning m-3" id="unsaved-changes-warning" data-i18n="warnings.unsavedChanges">
-        You have unsaved changes. Please save your changes before leaving this page.
+    <div class="alert alert-warning m-3 d-flex align-items-center" id="unsaved-changes-warning" role="alert">
+        <i class="fa-solid fa-triangle-exclamation me-2"></i>
+        <div>
+            <strong data-i18n="warnings.unsavedChanges">You have unsaved changes.</strong>
+            <span data-i18n="warnings.unsavedChangesHint">Please save your changes before leaving this page.</span>
+        </div>
     </div>
 
     <!-- Main content -->
     <main class="flex-fill">
         <div class="container" id="main-content-container">
-            
+
             <!-- Greeting/Headline -->
             <div class="d-flex justify-content-center my-5">
                 <div class="view-mode">
@@ -69,8 +73,8 @@
 
             <!-- Profile Card -->
             <div class="card my-4">
-                <div class="card-header" id="profile-card-header" data-i18n="sections.basicInfo">
-                    <i class="fa-solid fa-paw me-2"></i> Basic Information
+                <div class="card-header" id="profile-card-header">
+                    <i class="fa-solid fa-paw me-2"></i> <span data-i18n="sections.basicInfo">Basic Information</span>
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -209,8 +213,8 @@
 
             <!-- Owner Card -->
             <div class="card  my-4">
-                <div class="card-header" id="owner-card-header" data-i18n="sections.ownerInfo">
-                    <i class="fa-solid fa-user me-2"></i> Owner Information
+                <div class="card-header" id="owner-card-header">
+                    <i class="fa-solid fa-user me-2"></i> <span data-i18n="sections.ownerInfo">Owner Information</span>
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -284,8 +288,8 @@
 
             <!-- Additional Owner Card -->
             <div class="card  my-4">
-                <div class="card-header" id="owner2-card-header" data-i18n="sections.owner2Info">
-                    <i class="fa-solid fa-user me-2"></i> Secondary Owner Information
+                <div class="card-header" id="owner2-card-header">
+                    <i class="fa-solid fa-user me-2"></i> <span data-i18n="sections.owner2Info">Secondary Owner Information</span>
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -359,8 +363,8 @@
 
             <!-- Identification Card -->
             <div class="card my-4">
-                <div class="card-header" id="identification-card-header" data-i18n="sections.identificationInfo">
-                    <i class="fa-solid fa-fingerprint me-2"></i> Identification & Registration
+                <div class="card-header" id="identification-card-header">
+                    <i class="fa-solid fa-fingerprint me-2"></i> <span data-i18n="sections.identificationInfo">Identification & Registration</span>
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -431,8 +435,8 @@
 
             <!-- Health Card -->
             <div class="card my-4">
-                <div class="card-header" id="health-card-header" data-i18n="sections.healthInfo">
-                    <i class="fa-solid fa-heartbeat me-2"></i> Health Information
+                <div class="card-header" id="health-card-header">
+                    <i class="fa-solid fa-heartbeat me-2"></i> <span data-i18n="sections.healthInfo">Health Information</span>
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -481,8 +485,8 @@
 
             <!-- Vet Card -->
             <div class="card my-4">
-                <div class="card-header" id="vet-card-header" data-i18n="sections.vetInfo">
-                    <i class="fa-solid fa-user-doctor me-2"></i> Veterinarian Information
+                <div class="card-header" id="vet-card-header">
+                    <i class="fa-solid fa-user-doctor me-2"></i> <span data-i18n="sections.vetInfo">Veterinarian Information</span>
                 </div>
                 <div class="card-body p-0 pb-2">
                     <table class="table table-borderless table-hover m-0">
@@ -544,8 +548,8 @@
 
             <!-- Notes Card -->
             <div class="card my-4">
-                <div class="card-header" id="notes-card-header" data-i18n="sections.additionalNotes">
-                    <i class="fa-solid fa-note-sticky me-2"></i> Additional Notes
+                <div class="card-header" id="notes-card-header">
+                    <i class="fa-solid fa-note-sticky me-2"></i> <span data-i18n="sections.additionalNotes">Additional Notes</span>
                 </div>
                 <div class="card-body">
                     <div class="view-mode">
@@ -559,8 +563,8 @@
 
             <!-- Configuration Output -->
             <div class="card my-4 edit-mode">
-                <div class="card-header" id="configuration-card-header" data-i18n="sections.configuration">
-                    <i class="fa-solid fa-gear me-2"></i> Configuration
+                <div class="card-header" id="configuration-card-header">
+                    <i class="fa-solid fa-gear me-2"></i> <span data-i18n="sections.configuration">Configuration</span>
                 </div>
                 <div class="card-body">
                     <textarea class="form-control" id="config-output" rows="6" readonly></textarea>
