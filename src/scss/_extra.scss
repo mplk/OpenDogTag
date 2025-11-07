@@ -2,6 +2,18 @@ html, body {
     height: 100%;
 }
 
+nav {
+    background-color: var(--bs-navbar-bg);
+}
+
+footer {
+    background-color: var(--bs-footer-bg);
+}
+
+.unit-label {
+    width: 4rem;
+}
+
 .label-column {
     width: 40%;
 }
@@ -9,6 +21,11 @@ html, body {
 .value-column {
     width: 60%;
 }
+
+.icon-button {
+    color: var(--bs-brand-text);
+}
+
 
 #main-content-container {
     max-width: 42rem;
@@ -44,20 +61,9 @@ html, body {
     
 }
 
-// TODO: Set colors for dark mode
 [data-bs-theme=dark] #brand-logo {
     // Values calculated for --bs-brand-text with https://codepen.io/sosuke/pen/Pjoqqp
     filter: invert(99%) sepia(1%) saturate(2871%) hue-rotate(177deg) brightness(97%) contrast(85%);
 }
 
-nav {
-    background-color: var(--bs-navbar-bg);
-}
 
-footer {
-    background-color: var(--bs-footer-bg);
-}
-
-.icon-button {
-    color: var(--bs-brand-text);
-}

@@ -27,12 +27,10 @@
                     <option value="en">EN</option>
                     <option value="de">DE</option>
                 </select>
-                <button class="btn btn-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme"
-                    title="Toggle theme">
+                <button class="btn btn-secondary" id="theme-toggle-button" data-i18n-title="navbar.toggleTheme" title="Toggle theme">
                     <i class="fa-solid fa-moon" id="theme-icon"></i>
                 </button>
-                <button class="btn btn-secondary" id="edit-navbar-button" data-i18n-title="navbar.toggleEditMode"
-                    title="Toggle edit mode">
+                <button class="btn btn-secondary" id="edit-navbar-button" data-i18n-title="navbar.toggleEditMode" title="Toggle edit mode">
                     <div class="view-mode">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </div>
@@ -52,12 +50,22 @@
     <!-- Main content -->
     <main class="flex-fill">
         <div class="container" id="main-content-container">
-            <h1 class="m-5 text-center">
-                <div class="view-mode d-inline"><span id="greeting-view"></span></div>
-                <div class="edit-mode d-inline"><span data-i18n="greeting.edit">Hi I'm</span> <input
-                        class="form-control form-control-lg d-inline-block w-auto" id="name-input" type="text"
-                        data-i18n-placeholder="placeholders.name" placeholder="Name of your dog"> !</div>
-            </h1>
+            
+            <!-- Greeting/Headline -->
+            <div class="d-flex justify-content-center my-5">
+                <div class="view-mode">
+                    <h1 id="greeting-view">(empty)</h1>
+                </div>
+                <div class="edit-mode">
+                    <h1>
+                        <div class="d-flex justify-content-center">
+                            <span data-i18n="greeting.edit">Hi I'm</span>
+                            <input class="form-control form-control-lg d-inline-block w-auto mx-2" id="name-input" type="text" data-i18n-placeholder="placeholders.name" placeholder="Name of your dog">
+                            <span>!</span>
+                        </div>
+                    </h1>
+                </div>
+            </div>
 
             <!-- Profile Card -->
             <div class="card my-4">
@@ -79,22 +87,16 @@
                                     </div>
                                     <div class="edit-mode">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sex-input"
-                                                id="sex-noShow-input" checked>
-                                            <label class="form-check-label" for="sex-noShow-input"
-                                                data-i18n="values.noShow">Don't show</label>
+                                            <input class="form-check-input" type="radio" name="sex-input" id="sex-noShow-input" checked>
+                                            <label class="form-check-label" for="sex-noShow-input" data-i18n="values.noShow">Don't show</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sex-input"
-                                                id="sex-female-input">
-                                            <label class="form-check-label" for="sex-female-input"
-                                                data-i18n="values.female">Female</label>
+                                            <input class="form-check-input" type="radio" name="sex-input" id="sex-female-input">
+                                            <label class="form-check-label" for="sex-female-input" data-i18n="values.female">Female</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="sex-input"
-                                                id="sex-male-input">
-                                            <label class="form-check-label" for="sex-male-input"
-                                                data-i18n="values.male">Male</label>
+                                            <input class="form-check-input" type="radio" name="sex-input" id="sex-male-input">
+                                            <label class="form-check-label" for="sex-male-input" data-i18n="values.male">Male</label>
                                         </div>
                                     </div>
                                 </td>
@@ -107,28 +109,20 @@
                                     </div>
                                     <div class="edit-mode">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="neutered-input"
-                                                id="neutered-noShow-input" checked>
-                                            <label class="form-check-label" for="neutered-noShow-input"
-                                                data-i18n="values.noShow">Don't show</label>
+                                            <input class="form-check-input" type="radio" name="neutered-input" id="neutered-noShow-input" checked>
+                                            <label class="form-check-label" for="neutered-noShow-input" data-i18n="values.noShow">Don't show</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="neutered-input"
-                                                id="neutered-yes-input">
-                                            <label class="form-check-label" for="neutered-yes-input"
-                                                data-i18n="values.yes">Yes</label>
+                                            <input class="form-check-input" type="radio" name="neutered-input" id="neutered-yes-input">
+                                            <label class="form-check-label" for="neutered-yes-input" data-i18n="values.yes">Yes</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="neutered-input"
-                                                id="neutered-no-input">
-                                            <label class="form-check-label" for="neutered-no-input"
-                                                data-i18n="values.no">No</label>
+                                            <input class="form-check-input" type="radio" name="neutered-input" id="neutered-no-input">
+                                            <label class="form-check-label" for="neutered-no-input" data-i18n="values.no">No</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="neutered-input"
-                                                id="neutered-unknown-input">
-                                            <label class="form-check-label" for="neutered-unknown-input"
-                                                data-i18n="values.unknown">Unknown</label>
+                                            <input class="form-check-input" type="radio" name="neutered-input" id="neutered-unknown-input">
+                                            <label class="form-check-label" for="neutered-unknown-input" data-i18n="values.unknown">Unknown</label>
                                         </div>
                                     </div>
                                 </td>
@@ -151,8 +145,7 @@
                                         <span id="breed-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="breed-input"
-                                            data-i18n-placeholder="placeholders.breed" placeholder="Breed of your dog">
+                                        <input type="text" class="form-control" id="breed-input" data-i18n-placeholder="placeholders.breed" placeholder="Breed of your dog">
                                     </div>
                                 </td>
                             </tr>
@@ -164,10 +157,8 @@
                                     </div>
                                     <div class="edit-mode">
                                         <div class="input-group has-validation">
-                                            <input type="number" class="form-control" id="height-input"
-                                                data-i18n-placeholder="placeholders.height"
-                                                placeholder="Height of your dog" min="0" max="200" step="0.1">
-                                            <span class="input-group-text">cm</span>
+                                            <input type="number" class="form-control" id="height-input" data-i18n-placeholder="placeholders.height" placeholder="Height of your dog" min="0" max="200" step="0.1">
+                                            <span class="input-group-text unit-label">cm</span>
                                             <div class="invalid-feedback">Please enter a valid height (0-200 cm)</div>
                                         </div>
                                     </div>
@@ -181,10 +172,8 @@
                                     </div>
                                     <div class="edit-mode">
                                         <div class="input-group has-validation">
-                                            <input type="number" class="form-control" id="weight-input"
-                                                data-i18n-placeholder="placeholders.weight"
-                                                placeholder="Weight of your dog" min="0" max="150" step="0.1">
-                                            <span class="input-group-text">kg</span>
+                                            <input type="number" class="form-control" id="weight-input" data-i18n-placeholder="placeholders.weight" placeholder="Weight of your dog" min="0" max="150" step="0.1">
+                                            <span class="input-group-text unit-label">kg</span>
                                             <div class="invalid-feedback">Please enter a valid weight (0-150 kg)</div>
                                         </div>
                                     </div>
@@ -197,9 +186,7 @@
                                         <span id="character-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="character-input"
-                                            data-i18n-placeholder="placeholders.character"
-                                            placeholder="Character of your dog">
+                                        <input type="text" class="form-control" id="character-input" data-i18n-placeholder="placeholders.character" placeholder="Character of your dog">
                                     </div>
                                 </td>
                             </tr>
@@ -211,9 +198,7 @@
                                         <span id="specialAttributes-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="specialAttributes-input"
-                                            data-i18n-placeholder="placeholders.specialAttributes"
-                                            placeholder="Special Attributes of your dog">
+                                        <input type="text" class="form-control" id="specialAttributes-input" data-i18n-placeholder="placeholders.specialAttributes" placeholder="Special Attributes of your dog">
                                     </div>
                                 </td>
                             </tr>
@@ -241,8 +226,7 @@
                                         <span id="ownerName-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="ownerName-input"
-                                            data-i18n-placeholder="placeholders.ownerName" placeholder="Owner Name">
+                                        <input type="text" class="form-control" id="ownerName-input" data-i18n-placeholder="placeholders.ownerName" placeholder="Owner Name">
                                     </div>
                                 </td>
                             </tr>
@@ -253,9 +237,7 @@
                                         <span id="ownerPhone1-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="tel" class="form-control" id="ownerPhone1-input"
-                                            data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1"
-                                            pattern="[\d\s\+\-\(\)]+">
+                                        <input type="tel" class="form-control" id="ownerPhone1-input" data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
@@ -267,9 +249,7 @@
                                         <span id="ownerPhone2-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="tel" class="form-control" id="ownerPhone2-input"
-                                            data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2"
-                                            pattern="[\d\s\+\-\(\)]+">
+                                        <input type="tel" class="form-control" id="ownerPhone2-input" data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
@@ -281,8 +261,7 @@
                                         <span id="ownerEmail-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="email" class="form-control" id="ownerEmail-input"
-                                            data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
+                                        <input type="email" class="form-control" id="ownerEmail-input" data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
                                         <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </td>
@@ -294,9 +273,7 @@
                                         <p id="ownerAddress-output">(empty)</p>
                                     </div>
                                     <div class="edit-mode">
-                                        <textarea class="form-control" id="ownerAddress-input" rows="4"
-                                            data-i18n-placeholder="placeholders.ownerAddress"
-                                            placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
+                                        <textarea class="form-control" id="ownerAddress-input" rows="4" data-i18n-placeholder="placeholders.ownerAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -324,8 +301,7 @@
                                         <span id="owner2Name-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="owner2Name-input"
-                                            data-i18n-placeholder="placeholders.ownerName" placeholder="Owner Name">
+                                        <input type="text" class="form-control" id="owner2Name-input" data-i18n-placeholder="placeholders.ownerName" placeholder="Owner Name">
                                     </div>
                                 </td>
                             </tr>
@@ -336,9 +312,7 @@
                                         <span id="owner2Phone1-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="tel" class="form-control" id="owner2Phone1-input"
-                                            data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1"
-                                            pattern="[\d\s\+\-\(\)]+">
+                                        <input type="tel" class="form-control" id="owner2Phone1-input" data-i18n-placeholder="placeholders.ownerPhone1" placeholder="Phone 1" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
@@ -350,9 +324,7 @@
                                         <span id="owner2Phone2-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="tel" class="form-control" id="owner2Phone2-input"
-                                            data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2"
-                                            pattern="[\d\s\+\-\(\)]+">
+                                        <input type="tel" class="form-control" id="owner2Phone2-input" data-i18n-placeholder="placeholders.ownerPhone2" placeholder="Phone 2" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
@@ -364,8 +336,7 @@
                                         <span id="owner2Email-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="email" class="form-control" id="owner2Email-input"
-                                            data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
+                                        <input type="email" class="form-control" id="owner2Email-input" data-i18n-placeholder="placeholders.ownerEmail" placeholder="Email">
                                         <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </td>
@@ -377,9 +348,7 @@
                                         <span id="owner2Address-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <textarea class="form-control" id="owner2Address-input" rows="4"
-                                            data-i18n-placeholder="placeholders.ownerAddress"
-                                            placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
+                                        <textarea class="form-control" id="owner2Address-input" rows="4" data-i18n-placeholder="placeholders.ownerAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -407,8 +376,7 @@
                                         <span id="chipId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="chipId-input"
-                                            data-i18n-placeholder="placeholders.chipId" placeholder="Chip ID">
+                                        <input type="text" class="form-control" id="chipId-input" data-i18n-placeholder="placeholders.chipId" placeholder="Chip ID">
                                     </div>
                                 </td>
                             </tr>
@@ -419,9 +387,7 @@
                                         <span id="chipLocation-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="chipLocation-input"
-                                            data-i18n-placeholder="placeholders.chipLocation"
-                                            placeholder="Chip Location">
+                                        <input type="text" class="form-control" id="chipLocation-input" data-i18n-placeholder="placeholders.chipLocation" placeholder="Chip Location">
                                     </div>
                                 </td>
                             </tr>
@@ -432,8 +398,7 @@
                                         <span id="tassoId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="tassoId-input"
-                                            data-i18n-placeholder="placeholders.tassoId" placeholder="Tasso ID">
+                                        <input type="text" class="form-control" id="tassoId-input" data-i18n-placeholder="placeholders.tassoId" placeholder="Tasso ID">
                                     </div>
                                 </td>
                             </tr>
@@ -444,8 +409,7 @@
                                         <span id="insuranceId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="insuranceId-input"
-                                            data-i18n-placeholder="placeholders.insuranceId" placeholder="Insurance ID">
+                                        <input type="text" class="form-control" id="insuranceId-input" data-i18n-placeholder="placeholders.insuranceId" placeholder="Insurance ID">
                                     </div>
                                 </td>
                             </tr>
@@ -456,8 +420,7 @@
                                         <span id="taxId-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="taxId-input"
-                                            data-i18n-placeholder="placeholders.taxId" placeholder="Tax ID">
+                                        <input type="text" class="form-control" id="taxId-input" data-i18n-placeholder="placeholders.taxId" placeholder="Tax ID">
                                     </div>
                                 </td>
                             </tr>
@@ -485,8 +448,7 @@
                                         <span id="allergies-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="allergies-input"
-                                            data-i18n-placeholder="placeholders.allergies" placeholder="Allergies">
+                                        <input type="text" class="form-control" id="allergies-input" data-i18n-placeholder="placeholders.allergies" placeholder="Allergies">
                                     </div>
                                 </td>
                             </tr>
@@ -497,8 +459,7 @@
                                         <span id="diseases-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="diseases-input"
-                                            data-i18n-placeholder="placeholders.diseases" placeholder="Diseases">
+                                        <input type="text" class="form-control" id="diseases-input" data-i18n-placeholder="placeholders.diseases" placeholder="Diseases">
                                     </div>
                                 </td>
                             </tr>
@@ -509,8 +470,7 @@
                                         <span id="medications-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="medications-input"
-                                            data-i18n-placeholder="placeholders.medications" placeholder="Medications">
+                                        <input type="text" class="form-control" id="medications-input" data-i18n-placeholder="placeholders.medications" placeholder="Medications">
                                     </div>
                                 </td>
                             </tr>
@@ -538,8 +498,7 @@
                                         <span id="vetName-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="text" class="form-control" id="vetName-input"
-                                            data-i18n-placeholder="placeholders.vetName" placeholder="Vet Name">
+                                        <input type="text" class="form-control" id="vetName-input" data-i18n-placeholder="placeholders.vetName" placeholder="Vet Name">
                                     </div>
                                 </td>
                             </tr>
@@ -550,9 +509,7 @@
                                         <span id="vetPhone-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="tel" class="form-control" id="vetPhone-input"
-                                            data-i18n-placeholder="placeholders.vetPhone" placeholder="Phone"
-                                            pattern="[\d\s\+\-\(\)]+">
+                                        <input type="tel" class="form-control" id="vetPhone-input" data-i18n-placeholder="placeholders.vetPhone" placeholder="Phone" pattern="[\d\s\+\-\(\)]+">
                                         <div class="invalid-feedback">Please enter a valid phone number</div>
                                     </div>
                                 </td>
@@ -564,8 +521,7 @@
                                         <span id="vetEmail-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <input type="email" class="form-control" id="vetEmail-input"
-                                            data-i18n-placeholder="placeholders.vetEmail" placeholder="Email">
+                                        <input type="email" class="form-control" id="vetEmail-input" data-i18n-placeholder="placeholders.vetEmail" placeholder="Email">
                                         <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </td>
@@ -577,9 +533,7 @@
                                         <span id="vetAddress-output">(empty)</span>
                                     </div>
                                     <div class="edit-mode">
-                                        <textarea class="form-control" id="vetAddress-input" rows="4"
-                                            data-i18n-placeholder="placeholders.vetAddress"
-                                            placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
+                                        <textarea class="form-control" id="vetAddress-input" rows="4" data-i18n-placeholder="placeholders.vetAddress" placeholder="Street/Number&#10;ZIP City, State ZIP&#10;Country"></textarea>
                                     </div>
                                 </td>
                             </tr>
@@ -598,8 +552,7 @@
                         <p class="card-text" id="notes-output">(empty)</p>
                     </div>
                     <div class="edit-mode">
-                        <textarea class="form-control" id="notes-input" rows="4"
-                            data-i18n-placeholder="placeholders.notes" placeholder="Additional notes"></textarea>
+                        <textarea class="form-control" id="notes-input" rows="4" data-i18n-placeholder="placeholders.notes" placeholder="Additional notes"></textarea>
                     </div>
                 </div>
             </div>
@@ -616,8 +569,7 @@
                         <span class="badge bg-info text-bg-info" id="byte-counter">0 bytes</span>
                     </div>
                     <button class="btn btn-primary mt-2 w-100" id="preview-button">
-                        <i class="fa-solid fa-external-link-alt me-2"></i><span
-                            data-i18n="buttons.preview">Preview</span>
+                        <i class="fa-solid fa-external-link-alt me-2"></i><span data-i18n="buttons.preview">Preview</span>
                     </button>
                 </div>
             </div>
@@ -628,8 +580,7 @@
     <!-- Footer -->
     <footer>
         <div class="text-center p-3">
-            <a class="icon-button" href="https://github.com/yourusername/OpenDogTag" target="_blank"
-                rel="noopener noreferrer">
+            <a class="icon-button" href="https://github.com/yourusername/OpenDogTag" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-github fa-2x"></i>
             </a>
             <!-- TODO: Add Buy Me a Coffee link -->
