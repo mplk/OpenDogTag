@@ -104,14 +104,18 @@ function switchMode(mode) {
     switch (mode) {
         case 'edit':
             // Switch to edit mode
+            console.log('Switching to edit mode');
+
             $('.view-mode').addClass('d-none'); // Hide view mode elements
             $('.edit-mode').removeClass('d-none'); // Show edit mode elements
 
-            $('.card tr').show(); // Show all rows in edit mode
-            $('.card').show(); // Show all cards in edit mode
+            $('.card tr').removeClass('d-none'); // Show all rows in edit mode
+            $('.card').removeClass('d-none'); // Show all cards in edit mode
             break;
         case 'view':
             // Switch to view mode
+            console.log('Switching to view mode');
+
             $('.view-mode').removeClass('d-none'); // Show view mode elements
             $('.edit-mode').addClass('d-none'); // Hide edit mode elements
 
@@ -130,20 +134,31 @@ function hideEmptyCards() {
         const $card = $(this);
         const $table = $card.find('table tbody');
 
-        // Check if this card has a table with rows
-        if ($table.length > 0) {
-            const visibleRows = $table.find('tr:visible').length;
+        switch ($card.attr('id')) {
+            case 'notes-card':
+                const $notes = $card.find('#notes-output');
+                console.log('Notes length:', $notes.text().length);
 
-            // If no visible rows, hide the entire card
-            if (visibleRows === 0) {
-                $card.hide();
-            }
-        } else {
-            // For cards without tables (like Notes), check if content is empty
-            const $notes = $card.find('#notes-output');
-            if ($notes.length > 0 && $notes.text() === '(empty)') {
-                $card.hide();
-            }
+                if ($notes.text().length === 0) {
+                    $card.addClass('d-none');
+                }
+                break;
+
+            case 'configuration-card':
+                // Always show configuration card
+                break;
+
+            default:
+                // Check if this card has a table with rows
+                if ($table.length > 0) {
+                    const visibleRows = $table.find('tr:visible').length;
+
+                    // If no visible rows, hide the entire card
+                    if (visibleRows === 0) {
+                        $card.addClass('d-none');
+                    }
+                    break;
+                }
         }
     });
 }
@@ -152,7 +167,7 @@ function hideEmptyRows() {
     // Hide rows that have empty data
     Object.keys(tagData).forEach(field => {
         if (!tagData[field]) {
-            $(`#${field}-output`).closest('tr').hide();
+            $(`#${field}-output`).closest('tr').addClass('d-none');
         }
     });
 }
@@ -201,7 +216,7 @@ function populateOutputFields() {
             }
         } else {
             // Set empty text for fields without data
-            $(`#${field}-output`).text(translate('values.empty'));
+            $(`#${field}-output`).text('');
         }
     });
 }

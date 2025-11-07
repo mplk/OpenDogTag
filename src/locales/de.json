@@ -1,6 +1,5 @@
 {
   "navbar": {
-    "title": "OpenDogTag",
     "subtitle": "Open Source Notfall-NFC-Tag für Hunde",
     "toggleTheme": "Design wechseln",
     "editButton": "Bearbeiten",
@@ -80,7 +79,7 @@
     "weight": "Gewicht in kg",
     "character": "z.B. Freundlich, energisch",
     "specialAttributes": "z.B. Blaues Halsband, weißer Fleck auf der Brust",
-    "ownerName": "Ihr Name",
+    "ownerName": "Vorname Nachname",
     "ownerPhone1": "Haupttelefonnummer",
     "ownerPhone2": "Alternative Telefonnummer",
     "ownerEmail": "ihre.email@beispiel.de",
@@ -107,5 +106,14 @@
     "manualCopy": "Bitte kopieren Sie die Konfiguration manuell.",
     "popupBlocked": "Popup wurde blockiert. Bitte erlauben Sie Popups für diese Seite.",
     "languageChangeFailed": "Sprachwechsel fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "labels": {
+    "configurationSize": "Konfigurationsgröße:"
+  },
+  "validation": {
+    "height": "Bitte geben Sie eine gültige Höhe zwischen 0 und 200 cm ein.",
+    "weight": "Bitte geben Sie ein gültiges Gewicht zwischen 0 und 150 kg ein.",
+    "phone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+    "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
   }
 }

@@ -1,6 +1,5 @@
 {
   "navbar": {
-    "title": "OpenDogTag",
     "subtitle": "Open Source Emergency NFC Tag for Dogs",
     "toggleTheme": "Toggle theme",
     "editButton": "Edit",
@@ -80,7 +79,7 @@
     "weight": "Weight in kg",
     "character": "e.g., Friendly, energetic",
     "specialAttributes": "e.g., Blue collar, white spot on chest",
-    "ownerName": "Your name",
+    "ownerName": "Firstname Lastname",
     "ownerPhone1": "Primary phone number",
     "ownerPhone2": "Alternative phone number",
     "ownerEmail": "your.email@example.com",
@@ -107,5 +106,14 @@
     "manualCopy": "Please copy the configuration manually.",
     "popupBlocked": "Popup was blocked. Please allow popups for this page.",
     "languageChangeFailed": "Language change failed. Please try again."
+  },
+  "labels": {
+    "configurationSize": "Configuration size:"
+  },
+  "validation": {
+    "height": "Please enter a valid height between 0 and 200 cm.",
+    "weight": "Please enter a valid weight between 0 and 150 kg.",
+    "phone": "Please enter a valid phone number.",
+    "email": "Please enter a valid email address."
   }
 }
