@@ -118,7 +118,8 @@ function switchMode(mode) {
             hideEmptyRows(); // Hide empty rows in view mode
             hideEmptyCards(); // Hide empty cards in view mode
 
-            $('#unsaved-changes-warning').hide(); // Hide unsaved changes warning
+            // Hide unsaved changes warning by adding the Bootstrap utility class
+            $('#unsaved-changes-warning').addClass('d-none');
             break;
     }
 }
@@ -344,7 +345,8 @@ $(function () {
 
     // Observe changes and update configuration link
     $('#main-content-container').on('change input', 'input, textarea', function () {
-        $('#unsaved-changes-warning').show(); // Show unsaved changes warning
+        // Show unsaved changes warning by removing the Bootstrap utility class
+        $('#unsaved-changes-warning').removeClass('d-none');
         updateConfiguration();
     });
 
