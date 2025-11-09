@@ -68,7 +68,7 @@
     "months": "months"
   },
   "placeholders": {
-    "name": "Name of the dog",
+    "name": "Enter dog's name",
     "breed": "e.g., Golden Retriever",
     "height": "Height in cm",
     "weight": "Weight in kg",
